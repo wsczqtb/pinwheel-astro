@@ -1,6 +1,6 @@
 ---
 banner:
-  title: "Scale design & dev operations with Avocode Enterprise"
+  title: "FBA亚马逊物流商品"
   content: "A fully integrated suite of authentication & authoriz products, Stytch’s platform removes the headache of."
   image: /images/banner-img.png
   button:
@@ -55,7 +55,7 @@ service:
         image: "/images/sells-by-country.png"
       - title: Get an overview of Habit Calendars.
         icon: "FiClock" #icon package react-icons
-        image: "/images/collaboration.png"
+        image: "/images/1111.png"
       - title: Start building with Habitify platform
         icon: "FiBell" #icon package react-icons
         image: "/images/sells-by-country.png"
