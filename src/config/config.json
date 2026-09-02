@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Pinwheel Astro",
-    "base_url": "https://pinwheel-astro.vercel.app",
+    "base_url": "https://test.9810yun.com",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
