@@ -55,7 +55,7 @@ service:
         image: "/images/sells-by-country.png"
       - title: Get an overview of Habit Calendars.
         icon: "FiClock" #icon package react-icons
-        image: "/images/1111.png"
+        image: "https://assets.699pic.com/public/img95/photo/30340/0037.jpg_wh860.jpg"
       - title: Start building with Habitify platform
         icon: "FiBell" #icon package react-icons
         image: "/images/sells-by-country.png"

@@ -1,27 +1,27 @@
 {
   "main": [
     {
-      "name": "Home",
+      "name": "首页",
       "url": "/"
     },
     {
-      "name": "About",
+      "name": "关于",
       "url": "/about"
     },
     {
-      "name": "Blog",
+      "name": "博客",
       "url": "/blog"
     },
     {
-      "name": "Features",
+      "name": "特点",
       "url": "/features"
     },
     {
-      "name": "How It Works",
+      "name": "怎么运用",
       "url": "/how-it-works"
     },
     {
-      "name": "Pages",
+      "name": "页面",
       "url": "",
       "hasChildren": true,
       "children": [
@@ -59,7 +59,7 @@
       ]
     },
     {
-      "name": "Contact",
+      "name": "联系",
       "url": "/contact"
     }
   ],

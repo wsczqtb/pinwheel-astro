@@ -1,47 +1,42 @@
 {
   "site": {
-    "title": "Pinwheel Astro",
+    "title": "9810云ERP",
     "base_url": "https://test.9810yun.com",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
     "logo_width": "147",
-    "logo_height": "31",
-    "logo_text": "Pinwheel"
+    "logo_height": "40",
+    "logo_text": "9810云ERP"
   },
-
   "settings": {
     "pagination": 6,
     "summary_length": 100
   },
-
   "google_tag_manager": {
     "enable": false,
     "gtm_id": "GTM-XXXXXX"
   },
-
   "call_to_action": {
-    "title": "Helping teams in the world with focus",
-    "description": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
+    "title": "让跨境业务管理更清晰、更高效",
+    "description": "预约产品演示，结合你的平台、店铺、仓库和团队规模，获取适合的管理方案。",
     "button": {
-      "label": "Download The Theme",
-      "link": "https://themefisher.com/astro-themes/pinwheel-astro"
+      "label": "预约产品演示",
+      "link": "/contact"
     }
   },
-
   "params": {
-    "footer_description": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
-    "email": "info@andromeda.io",
-    "location": "2118 Thornridge Cir. Syracuse, Connecticut 35624",
-    "phone": "+704-555-0127",
+    "footer_description": "9810云ERP，为跨境电商团队提供订单、库存、采购、物流、财务和经营分析一体化管理。",
+    "email": "请替换为真实企业邮箱",
+    "location": "请替换为真实办公地址",
+    "phone": "请替换为真实联系电话",
     "contact_form_action": "#",
-    "copyright": "Copyright © 2025 a theme by [Themefisher](https://themefisher.com)"
+    "copyright": "Copyright © 2026 9810云ERP"
   },
-
   "metadata": {
-    "meta_author": "Themefisher",
+    "meta_author": "9810云ERP",
     "meta_image": "/images/og-image.png",
-    "meta_description": "pinwheel astro"
+    "meta_description": "9810云ERP为跨境电商卖家提供多平台订单、库存、采购、物流、财务和经营分析一体化管理。"
   }
 }
