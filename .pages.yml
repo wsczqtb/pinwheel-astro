@@ -63,18 +63,31 @@ content:
           time: true
           format: "yyyy-MM-dd'T'HH:mm:ssXXX"
 
-      - name: categories
+       - name: categories
         label: 文章分类
         type: select
         required: true
         options:
           multiple: true
           values:
-            - 亚马逊运营
-            - 跨境电商
-            - ERP教程
-            - 行业资讯
-            - 产品更新
+            - name: development
+              label: 开发教程
+            - name: design
+              label: 产品设计
+            - name: email marketing
+              label: 邮件营销
+            - name: rate optimization
+              label: 转化率优化
+            - name: updates
+              label: 产品更新
+            - name: amazon-operation
+              label: 亚马逊运营
+            - name: cross-border
+              label: 跨境电商
+            - name: erp-guide
+              label: ERP教程
+            - name: industry-news
+              label: 行业资讯
 
       - name: featured
         label: 首页推荐
