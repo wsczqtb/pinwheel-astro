@@ -25,13 +25,15 @@ const { Content } = await render(post);
   <div class="container">
     <div class="row justify-center">
       <div class="lg:col-10">
-        <Image
-          class="rounded-xl aspect-video object-contain"
-          src={post.data.image!}
-          alt={post.data.title}
-          width={920}
-          height={450}
-        />
+                {post.data.image && (
+          <Image
+            class="rounded-xl aspect-video object-contain"
+            src={post.data.image}
+            alt={post.data.title}
+            width={920}
+            height={450}
+          />
+        )}
       </div>
       <div class="mt-10 max-w-[810px] lg:col-9">
         <h1 class="h2">
