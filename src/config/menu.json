@@ -1,85 +1,18 @@
 {
   "main": [
-    {
-      "name": "首页",
-      "url": "/"
-    },
-    {
-      "name": "关于",
-      "url": "/about"
-    },
-    {
-      "name": "博客",
-      "url": "/blog"
-    },
-    {
-      "name": "特点",
-      "url": "/features"
-    },
-    {
-      "name": "怎么运用",
-      "url": "/how-it-works"
-    },
-    {
-      "name": "页面",
-      "url": "",
-      "hasChildren": true,
-      "children": [
-        {
-          "name": "Careers",
-          "url": "/careers"
-        },
-
-        {
-          "name": "Integrations",
-          "url": "/integrations"
-        },
-
-        {
-          "name": "Pricing",
-          "url": "/pricing"
-        },
-        {
-          "name": "Sign In",
-          "url": "/signin"
-        },
-
-        {
-          "name": "Elements",
-          "url": "/elements"
-        },
-        {
-          "name": "Changelog",
-          "url": "/changelog"
-        },
-        {
-          "name": "Terms And Conditions",
-          "url": "/terms-and-conditions"
-        }
-      ]
-    },
-    {
-      "name": "联系",
-      "url": "/contact"
-    }
+    { "name": "首页", "url": "/" },
+    { "name": "产品功能", "url": "/features" },
+    { "name": "业务流程", "url": "/how-it-works" },
+    { "name": "价格", "url": "/pricing" },
+    { "name": "博客", "url": "/blog" },
+    { "name": "关于我们", "url": "/about" },
+    { "name": "联系我们", "url": "/contact" }
   ],
-
   "footer": [
-    {
-      "name": "About",
-      "url": "/about"
-    },
-    {
-      "name": "Contact",
-      "url": "/contact"
-    },
-    {
-      "name": "Elements",
-      "url": "/elements"
-    },
-    {
-      "name": "Changelog",
-      "url": "/changelog"
-    }
+    { "name": "产品功能", "url": "/features" },
+    { "name": "价格", "url": "/pricing" },
+    { "name": "资源中心", "url": "/blog" },
+    { "name": "关于我们", "url": "/about" },
+    { "name": "联系我们", "url": "/contact" }
   ]
 }
