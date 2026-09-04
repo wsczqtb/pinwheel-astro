@@ -1,0 +1,97 @@
+media:
+  - name: blog_images
+    label: 博客图片
+    input: public/images/posts
+    output: /images/posts
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp, gif]
+    rename: safe
+
+content:
+  - name: blog
+    label: 博客文章
+    type: collection
+    path: src/content/blog
+    exclude:
+      - "-index.md"
+    filename: "{year}-{month}-{day}-{primary}.md"
+    format: yaml-frontmatter
+
+    view:
+      primary: title
+      sort: date
+      order: desc
+
+    fields:
+      - name: title
+        label: 文章标题
+        type: string
+        required: true
+
+      - name: subtitle
+        label: 副标题
+        type: string
+        required: false
+
+      - name: meta_title
+        label: SEO标题
+        type: string
+        required: false
+
+      - name: description
+        label: 文章摘要
+        type: text
+        required: false
+
+      - name: image
+        label: 封面图片
+        type: image
+        required: false
+        options:
+          media: blog_images
+
+      - name: author
+        label: 作者
+        type: string
+        default: "9810云"
+
+      - name: date
+        label: 发布时间
+        type: date
+        required: true
+        options:
+          time: true
+          format: "yyyy-MM-dd'T'HH:mm:ssXXX"
+
+      - name: categories
+        label: 文章分类
+        type: select
+        required: true
+        options:
+          multiple: true
+          values:
+            - 亚马逊运营
+            - 跨境电商
+            - ERP教程
+            - 行业资讯
+            - 产品更新
+
+      - name: featured
+        label: 首页推荐
+        type: boolean
+        default: false
+
+      - name: draft
+        label: 草稿
+        type: boolean
+        default: false
+
+      - name: body
+        label: 正文
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: blog_images
+          rename: safe
+          switcher: true
