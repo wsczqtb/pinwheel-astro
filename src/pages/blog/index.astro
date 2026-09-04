@@ -38,6 +38,17 @@ const currentPosts = recentPost.slice(0, config.settings.pagination);
   </section>
   <section class="section">
     <div class="container">
+      <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet" />
+      <script src="/pagefind/pagefind-component-ui.js" type="module"></script>
+      <div
+        class="mb-12 rounded-lg border border-[#e5e7eb] bg-white p-5 md:p-7"
+        style="--pagefind-ui-primary: #ff6b5b; --pagefind-ui-border-width: 1px; --pagefind-ui-border-radius: 6px;"
+      >
+        <h2 class="h4 mb-4">搜索文章</h2>
+        <pagefind-config lang="zh"></pagefind-config>
+        <pagefind-input placeholder="输入关键词搜索文章"></pagefind-input>
+        <pagefind-results></pagefind-results>
+      </div>
       <FeaturedBlog posts={featuredPost} />
       <BlogCategories categories={categories} />
       <h2 class="h4 mb-4">Recent Posts</h2>
