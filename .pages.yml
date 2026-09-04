@@ -43,7 +43,7 @@ content:
         type: text
         required: false
 
-     - name: image
+      - name: image
         label: 封面图片
         type: image
         required: false
@@ -55,7 +55,7 @@ content:
         type: string
         default: "9810云"
 
-     - name: date
+      - name: date
         label: 发布时间
         type: date
         required: true
