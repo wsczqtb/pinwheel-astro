@@ -33,19 +33,21 @@ const homepageCollection = defineCollection({
     }),
 
     service: z.object({
-      homepage_tab: z.object({
-        title: z.string(),
-        description: z.string(),
-        tab_list: z
-          .array(
-            z.object({
-              title: z.string(),
-              icon: z.string(),
-              image: z.string(),
-            }),
-          )
-          .optional(),
-      }),
+      homepage_tab: z
+        .object({
+          title: z.string(),
+          description: z.string(),
+          tab_list: z
+            .array(
+              z.object({
+                title: z.string(),
+                icon: z.string(),
+                image: z.string(),
+              }),
+            )
+            .optional(),
+        })
+        .optional(),
 
       our_service: z.array(
         z.object({
@@ -69,21 +71,23 @@ const homepageCollection = defineCollection({
         }),
       ),
     }),
-    testimonial: z.object({
-      title: z.string(),
-      description: z.string(),
-      testimonial_list: z
-        .array(
-          z.object({
-            author: z.string(),
-            avatar: z.string(),
-            organization: z.string(),
-            rating: z.enum(["one", "two", "three", "four", "five"]),
-            content: z.string(),
-          }),
-        )
-        .optional(),
-    }),
+    testimonial: z
+      .object({
+        title: z.string(),
+        description: z.string(),
+        testimonial_list: z
+          .array(
+            z.object({
+              author: z.string(),
+              avatar: z.string(),
+              organization: z.string(),
+              rating: z.enum(["one", "two", "three", "four", "five"]),
+              content: z.string(),
+            }),
+          )
+          .optional(),
+      })
+      .optional(),
   }),
 });
 
