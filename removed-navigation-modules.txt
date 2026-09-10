@@ -1,0 +1,19 @@
+已删除的导航模块代码
+====================
+
+原文件：src/config/menu.json
+备份日期：2026-09-10
+
+从顶部导航 main 中移除的代码：
+
+    { "name": "业务流程", "url": "/how-it-works" },
+    { "name": "价格", "url": "/pricing" },
+    { "name": "博客", "url": "/blog" },
+
+从页脚导航 footer 中移除的对应代码：
+
+    { "name": "价格", "url": "/pricing" },
+    { "name": "资源中心", "url": "/blog" },
+
+相关页面和内容源码仍保留在项目中。如需恢复，只要把以上代码放回
+src/config/menu.json 对应的 main 和 footer 数组即可。
