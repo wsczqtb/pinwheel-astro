@@ -41,7 +41,7 @@ service:
   our_service:
     - title: "统一管理产品、包装与耗材资料"
       description: "围绕产品建立统一资料中心，分别维护销售产品、辅料包装、公共耗材、产品分类和箱规信息，让采购、仓储、组装与发货使用一致的基础数据。"
-      image: "/images/intro-thumbnail.png"
+      image: "/images/product-data-dashboard.png"
       list:
         - 产品资料集中维护，减少重复录入和信息不一致
         - 辅料包装与公共耗材分开管理，使用范围更清晰
@@ -52,7 +52,7 @@ service:
         link: "/features"
     - title: "9810订单推送与申报状态"
       description: "集中更新9810订单申报信息，支持新增订单、从报关单同步和批量推单，并记录业务类型、公司、商品金额、运杂费、报送时间及申报状态。"
-      image: "/images/collaboration.png"
+      image: "/images/order-workflow-dashboard.png"
       list:
         - 从报关单同步订单，减少重复录入
         - 支持单笔开始推单和选中订单批量推单
@@ -63,7 +63,7 @@ service:
         link: "/features"
     - title: "进销存一体化管理"
       description: "连接供应商、采购单、销售单、客户与仓库库存，把入库、出库、调拨、盘点、组装和耗材摊销纳入同一套流程，让每一次库存变化都有来源、有去向、可追溯。"
-      image: "/images/intro-thumbnail.png"
+      image: "/images/inventory-dashboard.png"
       list:
         - 按公司、仓库和 SKU 查看现存、可用与锁定数量
         - 采购、入库、出库、调拨、盘点和组装全程留痕
