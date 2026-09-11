@@ -17,24 +17,22 @@ project_management:
   management:
     title: 核心业务模块
     projects:
-      - title: 多平台店铺管理
-        content: 统一管理授权店铺、商品和经营数据
-        icon: FiLock #多平台店铺管理
-      - title: 订单与履约
-        content: 集中处理订单、审核、发货、退换和异常。
-        icon: FiTv #订单与履约
-      - title: 采购与供应链
-        content: 管理供应商、采购单、到货和成本。
-        icon: FiTool #采购与供应链
-      - title: 多仓库存
-        content: 管理本地仓、海外仓、FBA 仓与在途库存。
-        icon: FiLock #多仓库存
-      - title: 财务与利润
-        content: 按订单、SKU、店铺和站点核算经营结果。
-        icon: FiTv #财务与利润
-      - title: 数据分析
-        content: 查看销售、利润、库存周转和商品表现。
-        icon: FiTool #数据分析
+      - title: 店铺管理
+        content: "集中查看不同店铺的订单、商品与推单进度等数据。"
+        icon: FiLock #店铺管理
+      - title: 9810推单
+        content: "支持手工建单、报关单同步、修改重推，并自动同步海关全流程状态。"
+        icon: FiTv #9810推单
+      - title: 库存管理
+        content: "统一管理本地仓、海外仓及在途库存。"
+        icon: FiTool #库存管理
+      - title: 报关处理
+        content: "一键生成装箱单、发票、合同和报关资料，减少重复制单和人工核对。"
+        icon: FiLock #报关处理
+      - title: 进销存
+        content: "报关数据自动进入进销存台账，采购、销售、出入库、调拨和盘点全程关联。"
+        icon: FiTv #进销存
+
   feature_service:
     title: "用一套数据看清经营关键环节"
     description: "运营、供应链和财务使用同一份业务数据，发现问题后可快速追溯到店铺、订单和商品。"
