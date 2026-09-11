@@ -27,7 +27,16 @@ key_features:
     - icon: "FiDollarSign"
       title: 进销存
       content: 报关数据自动进入进销存台账，采购、销售、出入库、调拨和盘点全程关联。
-
+    - icon: "FiGlobe"
+      title: ""
+      content: ""
+    - icon: "FiCreditCard"
+      title: ""
+      content: ""
+    - icon: "FiFileText"
+      title: ""
+      content: ""
+      
 service:
   our_service:
     - title: "统一管理产品、包装与耗材资料"
@@ -48,6 +57,10 @@ service:
         - 从报关单同步订单，减少重复录入
         - 支持单笔开始推单和选中订单批量推单
         - 订单信息的状态自动同步海关全流程
+      button:
+        enable: true
+        label: 查看产品功能
+        link: "/features"
     - title: "进销存一体化管理"
       description: "连接供应商、采购单、销售单、客户与仓库库存，把入库、出库、调拨、盘点、组装和耗材摊销纳入同一套流程，让每一次库存变化都有来源、有去向、可追溯。"
       image: "/images/intro-thumbnail.png"
