@@ -1,4 +1,9 @@
 ---
+title: 价格
+page_title: 价格方案
+meta_title: ""
+description: ""
+image: ""
 pricing_card:
   - title: 体验版
     pre_currency: ¥
@@ -72,18 +77,15 @@ pricing_card:
         - "专属客服与优先技术支持"
 
 faq:
-  title: Frequently Asked Questions
-  description: Vestibulum ante ipsum primis in faucibus orci luctus ultrices posuere cubilia Curae Donec
+  title: 常见问题
+  description: 关于套餐与增量加购的常见问题
   faq_list:
-    - title: How can I integrate Avocode to my current tool stack?
-      content: The Service is provided for free during this pilot project, and is provided "as is" with is not committed to any level of service or availability of the Service.
-    - title: How can I integrate Avocode to my current tool stack?
-      content: The Service is provided for free during this pilot project, and is provided "as is" with is not committed to any level of service or availability of the Service.
-    - title: How can I integrate Avocode to my current tool stack?
-      content: The Service is provided for free during this pilot project, and is provided "as is" with is not committed to any level of service or availability of the Service.
-    - title: How can I integrate Avocode to my current tool stack?
-      content: The Service is provided for free during this pilot availability of the Service.</br> If you enter into this agreement on behalf of a company, you hereby agree that the company is responsible under this Agreement for all actions and
+    - title: 超出基础额度怎么收费？
+      content: 公司每增加1家50元/年，产品每增加500个50元/年，用户每增加1位50元/年，文件存储每增加1GB为100元/年。
+    - title: 可以免费试用吗？
+      content: 体验版永久免费，标准版与旗舰版支持7天免费试用。
+    - title: 套餐可以随时升级吗？
+      content: 可以，升级后按剩余时长折算补差价，额度与功能立即生效。
 ---
 
-Donec sollicitudin molestie malesda. Donec sollitudin molestie malesuada. Mauris <br />
-pellentesque nec, egestas non nisi. Cras ultricies ligula sed magna
+选择适合您的套餐，基础额度内一次性付费，超出部分按增量灵活加购。
