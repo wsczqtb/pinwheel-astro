@@ -3,7 +3,28 @@ title: 价格
 page_title: 价格方案
 meta_title: ""
 description: ""
-image: ""
+image: "" 
+- title: 产品
+    pre_currency: ¥
+    post_currency: "/增加500个/年"
+    price: 50
+    icon: FiBox
+    description: 按SKU/SPU区分，基础包含500个，超出按年加购
+    featured: false
+    buttons:
+      buy_now:
+        label: 立即开通
+        link: "#"
+      free_trial:
+        label: 咨询详情
+        link: "/contact"
+    services:
+      title: 计费说明
+      list:
+        - "基础额度：500个产品SKU/SPU"
+        - "基础金额：已包含，不单独收费"
+        - "增量：每增加500个产品50元/年"
+  
 pricing_card:
   - title: 公司
     pre_currency: ¥
@@ -26,26 +47,7 @@ pricing_card:
         - "基础金额：100元/年"
         - "增量：每增加1家公司50元/年"
 
-  - title: 产品
-    pre_currency: ¥
-    post_currency: "/增加500个/年"
-    price: 50
-    icon: FiBox
-    description: 按SKU/SPU区分，基础包含500个，超出按年加购
-    featured: false
-    buttons:
-      buy_now:
-        label: 立即开通
-        link: "#"
-      free_trial:
-        label: 咨询详情
-        link: "/contact"
-    services:
-      title: 计费说明
-      list:
-        - "基础额度：500个产品SKU/SPU"
-        - "基础金额：已包含，不单独收费"
-        - "增量：每增加500个产品50元/年"
+
 
   - title: 用户
     pre_currency: ¥
