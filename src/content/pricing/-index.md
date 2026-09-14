@@ -5,76 +5,68 @@ meta_title: ""
 description: ""
 image: ""
 pricing_card:
-  - title: 体验版
+  - title: 公司
     pre_currency: ¥
-    post_currency: /年
-    price: 0
-    icon: FiBox
-    description: 适合个人卖家熟悉报关与推单流程
-    featured: false
-    buttons:
-      buy_now:
-        label: 免费使用
-        link: "/signup"
-      free_trial:
-        label: 观看功能演示
-        link: "/features"
-    services:
-      title: 包含哪些功能？
-      list:
-        - "9710/9810推单，推送订仓单不限量"
-        - "报关单单一窗口暂存"
-        - "1家公司主体"
-        - "100个产品SKU"
-        - "1位用户、200MB资料存储"
-
-  - title: 标准版
-    pre_currency: ¥
-    post_currency: /年
-    price: 398
+    post_currency: "/增加1家/年"
+    price: 50
     icon: FiBriefcase
-    description: 面向小型外贸团队，满足日常报关出单
+    description: 按公司主体区分，基础包含3家，超出按年加购
     featured: true
     buttons:
       buy_now:
-        label: 立即购买
+        label: 立即开通
         link: "#"
       free_trial:
-        label: 免费试用7天
-        link: "#"
+        label: 咨询详情
+        link: "/contact"
     services:
-      title: 包含哪些功能？
+      title: 计费说明
       list:
-        - "包含体验版全部功能"
-        - "一键生成报关资料（合同、发票、装箱单）"
-        - "开具出口发票"
-        - "3家公司主体（按主体区分）"
-        - "500个产品SKU、3位用户"
-        - "200MB合同资料管理"
+        - "基础额度：3家公司主体"
+        - "基础金额：100元/年"
+        - "增量：每增加1家公司50元/年"
 
-  - title: 旗舰版
+  - title: 产品
     pre_currency: ¥
-    post_currency: /年
-    price: 898
-    icon: FiLayers
-    description: 面向多主体、多订单的成长型企业
+    post_currency: "/增加500个/年"
+    price: 50
+    icon: FiBox
+    description: 按SKU/SPU区分，基础包含500个，超出按年加购
     featured: false
     buttons:
       buy_now:
-        label: 立即购买
+        label: 立即开通
         link: "#"
       free_trial:
-        label: 联系销售咨询
+        label: 咨询详情
         link: "/contact"
     services:
-      title: 包含哪些功能？
+      title: 计费说明
       list:
-        - "包含标准版全部功能"
-        - "10家公司主体、2000个产品SKU"
-        - "10位用户、2GB资料存储"
-        - "增量加购：1家公司50元/年"
-        - "500个产品50元/年、1GB存储100元/年"
-        - "专属客服与优先技术支持"
+        - "基础额度：500个产品SKU/SPU"
+        - "基础金额：已包含，不单独收费"
+        - "增量：每增加500个产品50元/年"
+
+  - title: 用户
+    pre_currency: ¥
+    post_currency: "/增加1位/年"
+    price: 50
+    icon: FiUsers
+    description: 按用户数区分，基础包含3位，超出按年加购
+    featured: false
+    buttons:
+      buy_now:
+        label: 立即开通
+        link: "#"
+      free_trial:
+        label: 咨询详情
+        link: "/contact"
+    services:
+      title: 计费说明
+      list:
+        - "基础额度：3位用户"
+        - "基础金额：已包含，不单独收费"
+        - "增量：每增加1位用户50元/年"
 
 faq:
   title: 常见问题
