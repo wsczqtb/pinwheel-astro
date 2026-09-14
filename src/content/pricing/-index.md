@@ -1,74 +1,76 @@
 ---
-title: Pricing
-page_title: Pinwheel Pricing
-meta_title: ""
-description: ""
-image: ""
 pricing_card:
-  - title: Basic
-    pre_currency: $
-    post_currency: usd
-    price: 29
-    icon: FiBox #icon package react-icons
-    description: Lorem ipsum dolor sit amet, secteturi adipiscing elit at sem ipsum.
+  - title: 体验版
+    pre_currency: ¥
+    post_currency: /年
+    price: 0
+    icon: FiBox
+    description: 适合个人卖家熟悉报关与推单流程
     featured: false
     buttons:
       buy_now:
-        label: Buy Now
-        link: "#"
+        label: 免费使用
+        link: "/signup"
       free_trial:
-        label: Start Free trial
-        link: "#"
+        label: 观看功能演示
+        link: "/features"
     services:
-      title: What's included?
+      title: 包含哪些功能？
       list:
-        - "Track Reward Part Program"
-        - "Design and prototype powerful"
-        - "Keep work in unlimited storage"
-        - "Add people document handoff."
+        - "9710/9810推单，推送订仓单不限量"
+        - "报关单单一窗口暂存"
+        - "1家公司主体"
+        - "100个产品SKU"
+        - "1位用户、200MB资料存储"
 
-  - title: Enterprise
-    pre_currency: $
-    post_currency: usd
-    price: 59
-    icon: FiTable #icon package react-icons
-    description: Lorem ipsum dolor sit amet, secteturi adipiscing elit at sem ipsum.
+  - title: 标准版
+    pre_currency: ¥
+    post_currency: /年
+    price: 398
+    icon: FiBriefcase
+    description: 面向小型外贸团队，满足日常报关出单
     featured: true
     buttons:
       buy_now:
-        label: Buy Now
+        label: 立即购买
         link: "#"
       free_trial:
-        label: Start Free trial
+        label: 免费试用7天
         link: "#"
     services:
-      title: What's included?
+      title: 包含哪些功能？
       list:
-        - "Track Reward Part Program"
-        - "Design and prototype powerful"
-        - "Keep work in unlimited storage"
-        - "Add people document handoff."
-  - title: Pro Lite
-    pre_currency: $
-    post_currency: usd
-    price: 99
-    icon: FiBriefcase #icon package react-icons
-    description: Lorem ipsum dolor sit amet, secteturi adipiscing elit at sem ipsum.
+        - "包含体验版全部功能"
+        - "一键生成报关资料（合同、发票、装箱单）"
+        - "开具出口发票"
+        - "3家公司主体（按主体区分）"
+        - "500个产品SKU、3位用户"
+        - "200MB合同资料管理"
+
+  - title: 旗舰版
+    pre_currency: ¥
+    post_currency: /年
+    price: 898
+    icon: FiLayers
+    description: 面向多主体、多订单的成长型企业
     featured: false
     buttons:
       buy_now:
-        label: Buy Now
+        label: 立即购买
         link: "#"
       free_trial:
-        label: Start Free trial
-        link: "#"
+        label: 联系销售咨询
+        link: "/contact"
     services:
-      title: What's included?
+      title: 包含哪些功能？
       list:
-        - "Track Reward Part Program"
-        - "Design and prototype powerful"
-        - "Keep work in unlimited storage"
-        - "Add people document handoff."
+        - "包含标准版全部功能"
+        - "10家公司主体、2000个产品SKU"
+        - "10位用户、2GB资料存储"
+        - "增量加购：1家公司50元/年"
+        - "500个产品50元/年、1GB存储100元/年"
+        - "专属客服与优先技术支持"
+
 faq:
   title: Frequently Asked Questions
   description: Vestibulum ante ipsum primis in faucibus orci luctus ultrices posuere cubilia Curae Donec
