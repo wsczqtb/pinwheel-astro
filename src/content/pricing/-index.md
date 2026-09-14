@@ -4,6 +4,7 @@ page_title: 价格方案
 meta_title: ""
 description: ""
 image: "" 
+pricing_card:
 - title: 产品
     pre_currency: ¥
     post_currency: "/增加500个/年"
@@ -24,8 +25,7 @@ image: ""
         - "基础额度：500个产品SKU/SPU"
         - "基础金额：已包含，不单独收费"
         - "增量：每增加500个产品50元/年"
-  
-pricing_card:
+
   - title: 公司
     pre_currency: ¥
     post_currency: "/增加1家/年"
