@@ -5,7 +5,7 @@ meta_title: ""
 description: ""
 image: "" 
 pricing_card:
-- title: 产品
+  - title: 产品
     pre_currency: ¥
     post_currency: "/增加500个/年"
     price: 50
@@ -47,8 +47,6 @@ pricing_card:
         - "基础金额：100元/年"
         - "增量：每增加1家公司50元/年"
 
-
-
   - title: 用户
     pre_currency: ¥
     post_currency: "/增加1位/年"
@@ -69,6 +67,7 @@ pricing_card:
         - "基础额度：3位用户"
         - "基础金额：已包含，不单独收费"
         - "增量：每增加1位用户50元/年"
+
 
 faq:
   title: 常见问题
