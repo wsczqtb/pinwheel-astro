@@ -41,5 +41,89 @@ const page_data = {
       </div>
     </div>
   </section>
+  <!-- 价格明细表 -->
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row justify-center text-center">
+        <div class="lg:col-8">
+          <h2 class="h2">价格表</h2>
+          <p class="mt-4 text-text-light">
+            基础套餐包含固定额度，超出部分按增量金额加购
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-10 overflow-x-auto">
+        <table class="w-full min-w-[760px] border-collapse text-left">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="border border-border px-4 py-3">模块</th>
+              <th class="border border-border px-4 py-3">内容</th>
+              <th class="border border-border px-4 py-3">数量</th>
+              <th class="border border-border px-4 py-3">基础金额</th>
+              <th class="border border-border px-4 py-3">增量金额</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-border px-4 py-3 align-top font-semibold text-primary">9710/9810推单</td>
+              <td class="border border-border px-4 py-3">推送订仓单</td>
+              <td class="border border-border px-4 py-3">不限</td>
+              <td class="border border-border px-4 py-3">-</td>
+              <td class="border border-border px-4 py-3">-</td>
+            </tr>
+            <tr>
+              <td class="border border-border px-4 py-3 align-top font-semibold text-primary" rowspan="3">报关单</td>
+              <td class="border border-border px-4 py-3">报关单暂存单一窗口</td>
+              <td class="border border-border px-4 py-3">-</td>
+              <td class="border border-border px-4 py-3">-</td>
+              <td class="border border-border px-4 py-3">-</td>
+            </tr>
+            <tr>
+              <td class="border border-border px-4 py-3">一键生成报关资料（合同、发票、装箱单）</td>
+              <td class="border border-border px-4 py-3">-</td>
+              <td class="border border-border px-4 py-3">-</td>
+              <td class="border border-border px-4 py-3">-</td>
+            </tr>
+            <tr>
+              <td class="border border-border px-4 py-3">开具出口发票</td>
+              <td class="border border-border px-4 py-3">-</td>
+              <td class="border border-border px-4 py-3">-</td>
+              <td class="border border-border px-4 py-3">-</td>
+            </tr>
+            <tr>
+              <td class="border border-border px-4 py-3 align-top font-semibold text-primary">公司</td>
+              <td class="border border-border px-4 py-3">按主体区分</td>
+              <td class="border border-border px-4 py-3">3家</td>
+              <td class="border border-border px-4 py-3">100元/年</td>
+              <td class="border border-border px-4 py-3">1家公司50元/年</td>
+            </tr>
+            <tr>
+              <td class="border border-border px-4 py-3 align-top font-semibold text-primary">产品</td>
+              <td class="border border-border px-4 py-3">按SKU/SPU区分</td>
+              <td class="border border-border px-4 py-3">500</td>
+              <td class="border border-border px-4 py-3">-</td>
+              <td class="border border-border px-4 py-3">500个产品50元/年</td>
+            </tr>
+            <tr>
+              <td class="border border-border px-4 py-3 align-top font-semibold text-primary">用户</td>
+              <td class="border border-border px-4 py-3">按用户数区分</td>
+              <td class="border border-border px-4 py-3">3位</td>
+              <td class="border border-border px-4 py-3">-</td>
+              <td class="border border-border px-4 py-3">1位用户50元/年</td>
+            </tr>
+            <tr>
+              <td class="border border-border px-4 py-3 align-top font-semibold text-primary">文件</td>
+              <td class="border border-border px-4 py-3">合同资料管理</td>
+              <td class="border border-border px-4 py-3">200MB</td>
+              <td class="border border-border px-4 py-3">-</td>
+              <td class="border border-border px-4 py-3">1GB100元/年</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
   <Faq client:load data={pricing.data} />
 </Base>
