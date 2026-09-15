@@ -6,7 +6,6 @@ import Faq from "@/layouts/function-components/Faq.jsx";
 import PricingCard from "@/layouts/function-components/PricingCard.jsx";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
-
 const pricing = (await getEntry(
   "pricing",
   "-index"
@@ -15,8 +14,87 @@ const page_data = {
   ...pricing.data,
   content: pricing.body,
 };
----
 
+const iconPaths = {
+  briefcase:
+    '<rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>',
+  box: '<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line>',
+  fileText:
+    '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline>',
+  shoppingCart:
+    '<circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>',
+  layers:
+    '<polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline>',
+};
+
+const productSections = [
+  {
+    title: "公司管理",
+    icon: "briefcase",
+    items: [
+      { name: "多公司管理", desc: "支持按权限划分公司所属人，对应人员仅可查看所属公司下对应信息" },
+      { name: "店铺管理", desc: "支持多平台、多店铺，按权限划分" },
+      { name: "汇率", desc: "每月自动更新期初记账及期末调汇汇率，按财务角度登记汇率。" },
+    ],
+  },
+  {
+    title: "产品管理",
+    icon: "box",
+    items: [
+      { name: "合并报关", desc: "系统支持多单品与父体关联，合并报关" },
+      { name: "组装产品", desc: "支持通过配件组装产品，适合零配件采购组装。" },
+      { name: "HSCode", desc: "支持通过HSCode编码同步海关数据，" },
+      { name: "法定单位", desc: "支持自动获取海关法定单位，通过换算比例自动录入报关单数据。" },
+      { name: "条形码", desc: "支持产品条形码管理" },
+      { name: "发票信息", desc: "支持多供应商、多币制发票管理。" },
+      { name: "装箱规格", desc: "支持产品多种箱规登记。" },
+      { name: "境内报关", desc: "按报关单完整信息设置，支持报关时直接调用" },
+      { name: "境外清关", desc: "境外清关信息登记，支持清关时自动导出数据" },
+      { name: "销售价格", desc: "支持多国家、多币种、不同销售单价统一管理" },
+      { name: "产品组装", desc: "支持简易BOM表，库存支持自动出库扣减或组装扣减" },
+      { name: "辅料包装", desc: "支持入库时按组装扣减，或出库时自动扣减" },
+      { name: "公共耗材", desc: "支持按月均分摊销，统一公司销售费用，不做分摊" },
+      { name: "分类管理", desc: "支持3层分类管理，方便用户对产品作以类别区分" },
+      { name: "箱规管理", desc: "支持对原厂包装产品进行箱规管理，报关单可直接引用" },
+    ],
+  },
+  {
+    title: "报关",
+    icon: "fileText",
+    items: [
+      { name: "9810推单", desc: "我们平台免费9810推单" },
+      { name: "报关资料", desc: "一键生成报关资料，合同、发票、装箱单" },
+    ],
+  },
+  {
+    title: "采购",
+    icon: "shoppingCart",
+    items: [
+      { name: "采购单", desc: "采购单模块覆盖采购业务全流程，从下单、到货入库到财务付款全程管控，统一管理单据、货品、供应商与结算进度。" },
+      { name: "采购仓库", desc: "支持采购入库时指定目标仓库。" },
+      { name: "采购人", desc: "根据公司权限，分配不同的采购人进行采购权限。" },
+      { name: "采购产品", desc: "支持产品、辅料包装及公共耗材等多类型物资采购。" },
+      { name: "到货", desc: "支持采购产品分批到货。" },
+      { name: "付款", desc: "平台自动生成付款单。" },
+      { name: "供应商", desc: "支持同一供应商名下配置多个账户。" },
+    ],
+  },
+  {
+    title: "库存",
+    icon: "layers",
+    items: [
+      { name: "库存明细", desc: "采购单入库保存成功后，系统自动给采购单选定对应仓库 + 对应 SKU在库存明细中增加现存量" },
+      { name: "库存预警", desc: "支持在库存低于安全阈值时触发预警。" },
+      { name: "库存价格", desc: "支持查看库存均价与库存总价。" },
+      { name: "入库单", desc: "根据采购单自动入库生成入库单" },
+      { name: "调拨单", desc: "支持同公司不同本地仓库之间的库存调拨" },
+      { name: "组装单", desc: "基于物料清单选择成品、组件、数量及仓库，系统自动核算原材料需求，并同步登记成品入库与组件出库。" },
+      { name: "摊销计划", desc: "采购公共耗材入库时即可设定按月摊销计划，后续摊销金额由系统自动计算并生成。" },
+      { name: "仓库", desc: "支持多仓库分开核算库存、分仓管控货品数据。" },
+    ],
+  },
+];
+---
 <Base
   title={pricing.data.title}
   meta_title={pricing.data.meta_title}
@@ -29,10 +107,11 @@ const page_data = {
       <PageHeader page_data={page_data} />
     </div>
   </section>
-  <!-- pricing -->
+
+  <!-- 标准版卡片：单张居中 -->
   <section class="section mt-12 pt-0">
     <div class="container">
-      <div class="row lg:px-10">
+      <div class="row justify-center lg:px-10">
         {
           pricing.data.pricing_card.map((item) => (
             <PricingCard item={item} client:load />
@@ -41,83 +120,34 @@ const page_data = {
       </div>
     </div>
   </section>
-  <!-- 价格明细表 -->
+
+  <!-- 价格表：模块 / 数量 / 增量 -->
   <section class="section pt-0">
     <div class="container">
-      <div class="row justify-center text-center">
-        <div class="lg:col-8">
-          <h2 class="h2">价格表</h2>
-          <p class="mt-4 text-text-light">
-            基础套餐包含固定额度，超出部分按增量金额加购
-          </p>
-        </div>
-      </div>
-
-      <div class="mt-10 overflow-x-auto">
-        <table class="w-full min-w-[760px] border-collapse text-left">
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[640px] border-collapse text-left">
           <thead>
             <tr class="bg-primary text-white">
-              <th class="border border-border px-4 py-3">模块</th>
-              <th class="border border-border px-4 py-3">内容</th>
-              <th class="border border-border px-4 py-3">数量</th>
-              <th class="border border-border px-4 py-3">基础金额</th>
-              <th class="border border-border px-4 py-3">增量金额</th>
+              <th class="w-1/4 border border-border px-5 py-3">模块</th>
+              <th class="w-1/4 border border-border px-5 py-3">数量</th>
+              <th class="border border-border px-5 py-3">增量</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="bg-white">
             <tr>
-              <td class="border border-border px-4 py-3 align-top font-semibold text-primary">9710/9810推单</td>
-              <td class="border border-border px-4 py-3">推送订仓单</td>
-              <td class="border border-border px-4 py-3">不限</td>
-              <td class="border border-border px-4 py-3">-</td>
-              <td class="border border-border px-4 py-3">-</td>
+              <td class="border border-border px-5 py-4 font-medium text-text-dark">产品</td>
+              <td class="border border-border px-5 py-4">初始500个</td>
+              <td class="border border-border px-5 py-4">500个产品50元/年</td>
             </tr>
             <tr>
-              <td class="border border-border px-4 py-3 align-top font-semibold text-primary" rowspan="3">报关单</td>
-              <td class="border border-border px-4 py-3">报关单暂存单一窗口</td>
-              <td class="border border-border px-4 py-3">-</td>
-              <td class="border border-border px-4 py-3">-</td>
-              <td class="border border-border px-4 py-3">-</td>
+              <td class="border border-border px-5 py-4 font-medium text-text-dark">用户</td>
+              <td class="border border-border px-5 py-4">3位</td>
+              <td class="border border-border px-5 py-4">1位用户50元/年</td>
             </tr>
             <tr>
-              <td class="border border-border px-4 py-3">一键生成报关资料（合同、发票、装箱单）</td>
-              <td class="border border-border px-4 py-3">-</td>
-              <td class="border border-border px-4 py-3">-</td>
-              <td class="border border-border px-4 py-3">-</td>
-            </tr>
-            <tr>
-              <td class="border border-border px-4 py-3">开具出口发票</td>
-              <td class="border border-border px-4 py-3">-</td>
-              <td class="border border-border px-4 py-3">-</td>
-              <td class="border border-border px-4 py-3">-</td>
-            </tr>
-            <tr>
-              <td class="border border-border px-4 py-3 align-top font-semibold text-primary">公司</td>
-              <td class="border border-border px-4 py-3">按主体区分</td>
-              <td class="border border-border px-4 py-3">3家</td>
-              <td class="border border-border px-4 py-3">100元/年</td>
-              <td class="border border-border px-4 py-3">1家公司50元/年</td>
-            </tr>
-            <tr>
-              <td class="border border-border px-4 py-3 align-top font-semibold text-primary">产品</td>
-              <td class="border border-border px-4 py-3">按SKU/SPU区分</td>
-              <td class="border border-border px-4 py-3">500</td>
-              <td class="border border-border px-4 py-3">-</td>
-              <td class="border border-border px-4 py-3">500个产品50元/年</td>
-            </tr>
-            <tr>
-              <td class="border border-border px-4 py-3 align-top font-semibold text-primary">用户</td>
-              <td class="border border-border px-4 py-3">按用户数区分</td>
-              <td class="border border-border px-4 py-3">3位</td>
-              <td class="border border-border px-4 py-3">-</td>
-              <td class="border border-border px-4 py-3">1位用户50元/年</td>
-            </tr>
-            <tr>
-              <td class="border border-border px-4 py-3 align-top font-semibold text-primary">文件</td>
-              <td class="border border-border px-4 py-3">合同资料管理</td>
-              <td class="border border-border px-4 py-3">200MB</td>
-              <td class="border border-border px-4 py-3">-</td>
-              <td class="border border-border px-4 py-3">1GB100元/年</td>
+              <td class="border border-border px-5 py-4 font-medium text-text-dark">文件</td>
+              <td class="border border-border px-5 py-4">200MB</td>
+              <td class="border border-border px-5 py-4">1GB100元/年</td>
             </tr>
           </tbody>
         </table>
@@ -125,5 +155,53 @@ const page_data = {
     </div>
   </section>
 
+  <!-- 产品说明 -->
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row justify-center text-center">
+        <div class="lg:col-8">
+          <h2 class="h2">产品说明</h2>
+        </div>
+      </div>
+
+      {
+        productSections.map((section) => (
+          <div class="mt-12">
+            <h3 class="flex items-center text-xl font-bold text-text-dark">
+              <svg
+                class="mr-2.5 size-6 text-primary"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                set:html={iconPaths[section.icon]}
+              />
+              {section.title}
+            </h3>
+            <div class="mt-4 overflow-hidden rounded-xl border border-border bg-white">
+              {
+                section.items.map((item, i) => (
+                  <div
+                    class={`grid grid-cols-1 md:grid-cols-4 ${
+                      i < section.items.length - 1 ? "border-b border-border" : ""
+                    }`}
+                  >
+                    <div class="px-5 py-4 font-medium text-text-dark md:col-span-1">
+                      {item.name}
+                    </div>
+                    <div class="px-5 py-4 text-text md:col-span-3">{item.desc}</div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
   <Faq client:load data={pricing.data} />
 </Base>
+
