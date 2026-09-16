@@ -13,29 +13,45 @@ key_features:
   description: "从商品采购到订单回款，统一关键数据和操作入口，减少重复表格、人工核对与跨部门沟通。"
   feature_list:
     - icon: "FiGrid"
-      title: 店铺管理
-      content: 集中查看不同店铺的订单、商品与推单进度等数据。
+      title: "多公司"
+      content: "多公司集中统一管控"
+      content: "业务数据按公司自动归集汇总"
+      content: "人员分级，精细化权限隔离"
     - icon: "FiShoppingCart"
-      title: 9810推单
-      content: 支持手工建单、报关单同步、修改重推，并自动同步海关全流程状态。
+      title: "产品"
+      content: "单品、父体、组装件多维档案管理"
+      content: "归集报关、发票、BOM、价格全套资料"
+      content: "统一管理包材辅料、耗材与箱规参数"
     - icon: "FiPackage"
-      title: 库存管理
-      content: 统一管理本地仓、海外仓及在途库存。
+      title: "报关"
+      content: "9710/9810推单，暂存单一获取E码"
+      content: "对接单一窗口，报关状态实时同步"
+      content: "一键生成出口单证：合同，发票，箱单"
     - icon: "FiTrendingUp"
-      title: 报关处理
-      content: 一键生成装箱单、发票、合同和报关资料，减少重复制单和人工核对。
+      title: "采购"
+      content: "商品、辅料、耗材多品类采购管理"
+      content: "支持多币种、多仓库，单品 / 整单折扣"
+      content: "自动生成入库单据与供应商请款单"
     - icon: "FiDollarSign"
-      title: 进销存
-      content: 报关数据自动进入进销存台账，采购、销售、出入库、调拨和盘点全程关联。
+      title: "库存"
+      content: "国内仓 + 海外仓多仓分布式管控"
+      content: "移动加权成本核算，实时库存台账"
+      content: "自动出入库、费用摊销，简易组装生产"
     - icon: "FiGlobe"
-      title: ""
-      content: ""
+      title: "物流"
+      content: "多物流服务商，与渠道集中管理"
+      content: "以报关单为载体，自动生成物流明细"
+      content: "运费预估核算，支持与实际运费对账"
     - icon: "FiCreditCard"
-      title: ""
-      content: ""
+      title: "销售"
+      content: "客户档案管理，适配 0110 传统外贸订单"
+      content: "客户按业务员分配，业绩自动归属核算"
+      content: "订单联动履约，自动生成出库与应收单据"
     - icon: "FiFileText"
-      title: ""
-      content: ""
+      title: "财务"
+      content: "适配 9810 业务出口退税自动核算"
+      content: "采购单据自动生成付款单，支持分批支付"
+      content: "销售单据自动生成收款单，支持分批回款"
       
 service:
   our_service:
