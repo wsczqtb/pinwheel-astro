@@ -5,8 +5,8 @@ banner:
   image: /images/banner-img.png
   button:
     enable: true
-    label: 预约产品演示
-    link: "/contact"
+    label: 立即使用
+    link: "https://www.9810yun.com/"
 
 key_features:
   title: "覆盖跨境业务全流程的核心能力"
