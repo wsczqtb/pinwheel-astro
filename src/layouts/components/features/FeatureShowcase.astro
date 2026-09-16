@@ -9,35 +9,42 @@ const showcase = features.feature_showcase;
   <section class="section pt-0">
     <div class="container">
       {showcase.map((item, index) => (
-        <div
-          class={`row items-center ${index > 0 ? "mt-20" : ""}`}
-        >
-          {/* 图片列：奇数项在右，偶数项在左 */}
-          <div class={`lg:col-6 ${index % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}>
-            <div class="relative">
-              <img
-                class="w-full rounded-xl object-contain shadow-lg"
-                src={item.image}
-                alt={item.title}
-              />
+        <div class={`row items-center gap-y-10 ${index > 0 ? "mt-24" : ""}`}>
+          {/* 产品截图列 */}
+          <div class={`lg:col-6 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+            <div class="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl">
+              <!-- 浏览器窗口栏 -->
+              <div class="flex items-center gap-2 border-b border-gray-100 bg-gray-50 px-4 py-3">
+                <span class="h-3 w-3 rounded-full bg-red-400"></span>
+                <span class="h-3 w-3 rounded-full bg-yellow-400"></span>
+                <span class="h-3 w-3 rounded-full bg-green-400"></span>
+              </div>
+              <img src={item.image} alt={item.title} class="w-full object-cover" />
             </div>
           </div>
 
           {/* 文案列 */}
-          <div
-            class={`mt-8 lg:col-6 lg:mt-0 ${index % 2 === 0 ? "lg:order-2 lg:pl-12" : "lg:order-1 lg:pr-12"}`}
-          >
-            <span class="text-sm font-semibold uppercase tracking-wider text-primary">
-              {item.subtitle}
+          <div class={`lg:col-6 ${index % 2 === 1 ? "lg:order-1 lg:pr-12" : "lg:pl-12"}`}>
+            <span class="text-sm font-semibold uppercase tracking-widest text-primary">
+              {String(index + 1).padStart(2, "0")} / {item.title}
             </span>
-            <h2 class="mt-3 text-3xl font-bold lg:text-4xl" set:html={markdownify(item.title)} />
-            <p class="mt-4 text-text-dark" set:html={markdownify(item.description)} />
+            <h2 class="mt-3 text-3xl font-bold leading-tight lg:text-4xl" set:html={markdownify(item.title)} />
+            <p class="mt-3 text-lg font-medium text-gray-600" set:html={markdownify(item.subtitle)} />
+            <p class="mt-4 text-base leading-relaxed text-gray-500" set:html={markdownify(item.description)} />
 
-            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+            {/* 功能点列表 */}
+            <div class="mt-8 space-y-5">
               {item.features.map((f) => (
-                <div class="rounded-lg bg-white p-4 shadow-md">
-                  <h3 class="text-lg font-semibold">{f.title}</h3>
-                  <p class="mt-2 text-sm text-text-dark">{f.content}</p>
+                <div class="flex gap-3">
+                  <div class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary/10">
+                    <svg class="h-3.5 w-3.5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-base font-semibold text-gray-900">{f.title}</h3>
+                    <p class="mt-1 text-sm leading-relaxed text-gray-500">{f.content}</p>
+                  </div>
                 </div>
               ))}
             </div>
