@@ -31,35 +31,6 @@ project_management:
       - title: 进销存
         content: "报关数据自动进入进销存台账，采购、销售、出入库、调拨和盘点全程关联。"
         icon: FiTv
-  feature_service:
-    title: "一套数据，贯穿业务与财务"
-    description: "9810 云把订单、库存、报关、采购和财务数据放在同一套台账中。业务单据自动流转，减少人工对账和数据搬运，让运营、供应链和财务围绕同一套数字协作。"
-    image: "/images/product-data-dashboard.png"
-    list:
-      - "报关数据自动同步进销存台账"
-      - "采购、销售、出入库全程关联可追溯"
-      - "多店铺、多仓库数据统一汇总"
-      - "业务单据自动生成财务记录"
-    buttons:
-      - label: "预约产品演示"
-        link: "/contact"
-        enable: true
-      - label: "查看核心功能"
-        link: "#"
-        enable: true
-        outline: true
-  feature_tab:
-    title: "采购、仓储与物流协同管理"
-    list:
-      - title: "多仓库存统一查看"
-        content: "统一查看本地仓、海外仓、FBA 仓和在途库存，及时掌握可售数量与库存周转。"
-        image: "/images/features/feature-img-2.png"
-      - title: "智能补货与采购协同"
-        content: "结合销量、库存和运输时效制定补货计划，串联采购、入库与调拨流程。"
-        image: "/images/features/feature-img-1.png"
-      - title: "物流履约全程追踪"
-        content: "从订单审核、发货到在途和签收统一追踪，快速定位并处理异常订单。"
-        image: "/images/features/feature-img-2.png"
 feature_showcase:
   - title: "店铺管理"
     subtitle: "多个店铺，一处查看；每一笔出口业务都有明确归属"
