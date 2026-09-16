@@ -19,12 +19,12 @@ const HomapageFeature = ({ feature_list }) => {
               <h3 className="h4 text-xl lg:text-2xl">{item.title}</h3>
             </div>
 
-            {/* 描述列表：每行前面加小圆点 */}
+            {/* 描述列表：每行前面加小圆点，换行后文字对齐 */}
             <ul className="mt-3 space-y-2">
               {item.items?.map((line, j) => (
                 <li key={j} className="flex items-start text-text">
                   <span className="mr-2 mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  <span>{line}</span>
+                  <span className="min-w-0 flex-1">{line}</span>
                 </li>
               ))}
             </ul>
