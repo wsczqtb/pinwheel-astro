@@ -30,7 +30,11 @@ const {
         <Projects client:load projects={management.projects} />
       </div>
     </div>
-    <FeatureService feature_service={feature_service} />
+    {feature_service && <FeatureService feature_service={feature_service} />}
+    {feature_tab && <FeatureTab client:load feature_tab={feature_tab} />}
+  </div>
+</section>
+
     <FeatureTab client:load feature_tab={feature_tab} />
   </div>
 </section>
