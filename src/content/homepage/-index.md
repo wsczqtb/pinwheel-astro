@@ -13,56 +13,56 @@ key_features:
   description: "从商品采购到订单回款，统一关键数据和操作入口，减少重复表格、人工核对与跨部门沟通。"
   feature_list:
     - icon: "FiBriefcase"
-      title: "1. 多公司"
+      title: "多公司"
       items:
         - 多公司集中统一管控
         - 业务数据按公司自动归集汇总
         - 人员分级，精细化权限隔离
 
     - icon: "FiPackage"
-      title: "2. 产品"
+      title: "产品"
       items:
         - 单品、父体、组装件多维档案管理
         - 归集报关、发票、BOM、价格全套资料
         - 统一管理包材辅料、耗材与箱规参数
 
     - icon: "FiFileText"
-      title: "3. 报关"
+      title: "报关"
       items:
         - 9710/9810推单，暂存单一获取E码
         - 对接单一窗口，报关状态实时同步
         - 一键生成出口单证：合同，发票，箱单
 
     - icon: "FiShoppingCart"
-      title: "4. 采购"
+      title: "采购"
       items:
         - 商品、辅料、耗材多品类采购管理
         - 支持多币种、多仓库，单品 / 整单折扣
         - 自动生成入库单据与供应商请款单
 
     - icon: "FiArchive"
-      title: "5. 库存"
+      title: "库存"
       items:
         - 国内仓 + 海外仓多仓分布式管控
         - 移动加权成本核算，实时库存台账
         - 自动出入库、费用摊销，简易组装生产
 
     - icon: "FiTruck"
-      title: "6. 物流"
+      title: "物流"
       items:
         - 多物流服务商，与渠道集中管理
         - 以报关单为载体，自动生成物流明细
         - 运费预估核算，支持与实际运费对账
 
     - icon: "FiDollarSign"
-      title: "7. 销售"
+      title: "销售"
       items:
         - 客户档案管理，适配 0110 传统外贸订单
         - 客户按业务员分配，业绩自动归属核算
         - 订单联动履约，自动生成出库与应收单据
 
     - icon: "FiCreditCard"
-      title: "8. 财务"
+      title: "财务"
       items:
         - 适配 9810 业务出口退税自动核算
         - 采购单据自动生成付款单，支持分批支付
