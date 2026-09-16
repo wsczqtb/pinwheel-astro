@@ -35,7 +35,7 @@ feature_showcase:
   - title: "店铺管理"
     subtitle: "多个店铺，一处查看；每一笔出口业务都有明确归属"
     description: "跨境业务通常同时经营多个平台、多个站点和多个店铺。订单、商品、企业主体与报关资料分散在不同后台，频繁切换容易造成信息遗漏或主体混用。9810 云把店铺作为业务入口，集中查看各店铺的商品、订单和推单进度，并关联公司、品牌与汇率等基础资料，让后续采购、库存、报关和推单都有清晰的数据来源。"
-    image: "/images/features/dashboard-01-store.png"
+    image: "/images/product-data-dashboard.png"
     button:
       label: "查看产品功能"
       link: "#"
@@ -47,7 +47,7 @@ feature_showcase:
   - title: "9810 推单"
     subtitle: "从填写报关单到单一窗口查看，9810 推单全流程集中处理"
     description: "针对跨境电商出口海外仓业务，9810 云支持手工创建海外仓订仓单，也可以从已有报关单同步生成推单记录。业务人员完成商品、数量、价格和运杂费核对后即可发起推单；遇到信息调整或申报失败，可以修改资料后重新推送，并持续查看申报状态和业务明细。"
-    image: "/images/features/dashboard-02-push.png"
+    image: "/images/order-workflow-dashboard.png"
     button:
       label: "查看产品功能"
       link: "#"
@@ -63,7 +63,7 @@ feature_showcase:
   - title: "库存管理"
     subtitle: "本地仓与海外仓，放在同一张库存地图上"
     description: "跨境出口库存分布在境内仓库和境外仓库，单看某一个仓库很难判断商品真实状态。9810 云以商品和仓库为核心集中管理库存明细，记录入库、调拨、盘点和组装等变化，为采购备货、仓库作业和报关申报提供一致的库存口径。"
-    image: "/images/features/dashboard-03-inventory.png"
+    image: "/images/inventory-dashboard.png"
     button:
       label: "查看产品功能"
       link: "#"
@@ -79,7 +79,7 @@ feature_showcase:
   - title: "报关处理"
     subtitle: "商品资料自动复用，一套数据生成完整报关资料"
     description: "报关业务涉及企业主体、境外收货人、HSCode、申报要素、价格、箱件数、毛净重和贸易条款等大量信息。9810 云把企业与商品资料集中维护并关联到报关单，支持简易和完整两种录入方式；完成业务数据后，可继续生成装箱单、出口发票、合同及相关报关资料，减少在多个模板中重复复制。"
-    image: "/images/features/dashboard-04-customs.png"
+    image: "/images/features/feature-img-1.png"
     button:
       label: "查看产品功能"
       link: "#"
@@ -93,7 +93,7 @@ feature_showcase:
   - title: "进销存"
     subtitle: "从采购到出口，让货物流转与报关数据自动对上"
     description: "进销存不只是记录库存数量，更要说明货物从哪里采购、何时到货、如何入库与调拨、通过哪张报关单出口，以及最终进入哪个店铺或仓库。9810 云把采购、出入库、调拨、盘点和组装业务与产品、仓库及报关记录关联起来，形成连续的货物业务台账。"
-    image: "/images/features/dashboard-05-invoicing.png"
+    image: "/images/features/feature-img-2.png"
     button:
       label: "查看产品功能"
       link: "#"
