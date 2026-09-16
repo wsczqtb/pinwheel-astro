@@ -1,57 +1,33 @@
 ---
 import Logo from "@/components/Logo.astro";
-import Social from "@/components/Social.astro";
 import config from "@/config/config.json";
-import menu from "@/config/menu.json";
-import social from "@/config/social.json";
 import { markdownify } from "@/lib/utils/textConverter";
-const { footer } = menu;
-const { copyright, location, email, phone, footer_description } = config.params;
+const { copyright, location, footer_description } = config.params;
 ---
 
 <footer class="footer bg-light">
   <div class="container">
     <div class="gx-5 row pb-10 pt-[52px]">
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
+      {/* 左列：Logo + 描述 */}
+      <div class="col-12 mt-12 md:col-6 lg:col-6">
         <Logo />
         <p class="mt-6">
           {footer_description}
         </p>
       </div>
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>Socials</h6>
 
-        <Social source={social.main} className="social-icons mt-4 lg:mt-6" />
-      </div>
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>Quick Links</h6>
-        <ul>
-          {
-            footer.map((item, i) => (
-              <li class={footer.length - 1 === i ? "mb-0" : "mb-4"}>
-                <a class="hover:text-primary hover:underline " href={item.url}>
-                  {item.name}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
+      {/* 右列：Location & Contact + 地址 + 图片 */}
+      <div class="col-12 mt-12 md:col-6 lg:col-6">
         <h6>Location & Contact</h6>
-        <ul>
+        <ul class="mt-4">
           <li class="mb-2">{location}</li>
-          <li class="mb-2">
-            <a class="mb-2 hover:text-primary" href={`mailto:${email}`}
-              >{email}</a
-            >
-          </li>
-          <li>
-            <a class="hover:text-primary hover:underline" href={`tel:${phone}`}
-              >{phone}</a
-            >
-          </li>
         </ul>
+        {/* 办公地址下面的图片，把图片放到 public/images/ 目录下 */}
+        <img
+          src="/images/footer-contact.png"
+          alt="联系我们"
+          class="mt-4 w-full max-w-[240px] rounded-lg"
+        />
       </div>
     </div>
   </div>
