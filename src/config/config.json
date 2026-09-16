@@ -6,8 +6,8 @@
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
-    "logo_width": "147",
-    "logo_height": "40",
+    "logo_width": "60",
+    "logo_height": "60",
     "logo_text": "9810云ERP"
   },
   "settings": {
@@ -27,16 +27,16 @@
     }
   },
   "params": {
-    "footer_description": "9810云ERP，为跨境电商团队提供订单、库存、采购、物流、财务和经营分析一体化管理。",
+    "footer_description": "一站式跨境电商全链路系统平台，助力卖家高效经营、合规出海。",
     "email": "请替换为真实企业邮箱",
-    "location": "请替换为真实办公地址",
+    "location": "深圳市龙岗区园山街道大运软件小镇35栋2楼", 
     "phone": "请替换为真实联系电话",
     "contact_form_action": "#",
-    "copyright": "Copyright © 2026 9810云ERP"
+    "copyright": "9810云ERP"
   },
   "metadata": {
     "meta_author": "9810云ERP",
     "meta_image": "/images/og-image.png",
-    "meta_description": "9810云ERP为跨境电商卖家提供多平台订单、库存、采购、物流、财务和经营分析一体化管理。"
+    "meta_description": "一站式跨境电商全链路系统平台，助力卖家高效经营、合规出海。"
   }
 }
