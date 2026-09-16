@@ -14,9 +14,10 @@ key_features:
   feature_list:
     - icon: "FiGrid"
       title: "多公司"
-      content: "多公司集中统一管控"
-      content: "业务数据按公司自动归集汇总"
-      content: "人员分级，精细化权限隔离"
+      content: |
+      "多公司集中统一管控"
+      "业务数据按公司自动归集汇总"
+      "人员分级，精细化权限隔离"
     - icon: "FiShoppingCart"
       title: "产品"
       content: "单品、父体、组装件多维档案管理"
