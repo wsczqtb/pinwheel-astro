@@ -1,6 +1,7 @@
 ---
 import FeatureBanner from "@/components/features/FeatureBanner.astro";
 import FeatureShowcase from "@/components/features/FeatureShowcase.astro";
+import ProjectManagement from "@/components/features/ProjectManagement.astro";
 import Shape from "@/components/Shape.astro";
 import Base from "@/layouts/Base.astro";
 import Cta from "@/layouts/partials/Cta.astro";
@@ -21,6 +22,7 @@ const features = (await getEntry(
 >
   <Shape />
   <FeatureBanner features={features.data} />
+  <ProjectManagement features={features.data} />
   <FeatureShowcase features={features.data} />
   <Cta />
 </Base>
