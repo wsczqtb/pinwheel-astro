@@ -1,6 +1,6 @@
 ---
 banner:
-  title: "跨境电商/外贸公司   一站式实现出口业财合规"
+  title: "跨境电商一站式出口业财合规"
   content: "覆盖公司、产品、报关、采购、库存、物流、销售、财务八大核心模块，让每一笔跨境生意都清晰可控。"
   image: /images/banner-img.png
   button:
