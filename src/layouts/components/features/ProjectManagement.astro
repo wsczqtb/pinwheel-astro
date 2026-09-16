@@ -1,15 +1,11 @@
 ---
-import FeatureTab from "@/layouts/function-components/FeatureTab";
 import { markdownify } from "@/lib/utils/textConverter";
-import FeatureService from "./FeatureService.astro";
 
 const {
   features: {
     project_management: {
       title,
       content,
-      feature_service,
-      feature_tab,
     },
   },
 } = Astro.props;
@@ -23,7 +19,5 @@ const {
         <p class="mt-4" set:html={markdownify(content)} />
       </div>
     </div>
-    <FeatureService feature_service={feature_service} />
-    <FeatureTab client:load feature_tab={feature_tab} />
   </div>
 </section>
