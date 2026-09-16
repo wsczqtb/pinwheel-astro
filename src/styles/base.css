@@ -3,16 +3,11 @@ html {
 }
 
 body {
-  @apply bg-body bg-[url('/images/body-bg.svg')] bg-repeat font-primary font-normal leading-relaxed text-text overflow-x-hidden;
+  @apply bg-body bg-[url('/images/body-bg.svg')] bg-repeat font-sans font-normal leading-relaxed text-text overflow-x-hidden;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-secondary font-bold leading-tight text-text-dark;
+h1, h2, h3, h4, h5, h6 {
+  @apply font-sans font-bold leading-tight text-text-dark;
 }
 
 h1,
