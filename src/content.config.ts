@@ -213,37 +213,66 @@ const featuresCollection = defineCollection({
       }),
 
       // Feature Service Section
-      feature_service: z.object({
-        title: z.string(),
-        description: z.string(),
-        image: z.string(),
-        list: z.array(z.string()).optional(),
-        buttons: z.array(
-          z.object({
-            label: z.string(),
-            link: z.string(),
-            enable: z.boolean().default(true),
-            outline: z.boolean().optional(),
-          }),
-        ),
-      }),
+      feature_service: z
+        .object({
+          title: z.string(),
+          description: z.string(),
+          image: z.string(),
+          list: z.array(z.string()).optional(),
+          buttons: z.array(
+            z.object({
+              label: z.string(),
+              link: z.string(),
+              enable: z.boolean().default(true),
+              outline: z.boolean().optional(),
+            }),
+          ),
+        })
+        .optional(),
 
       // Feature Tab Section
-      feature_tab: z.object({
-        title: z.string(),
-        list: z
-          .array(
+      feature_tab: z
+        .object({
+          title: z.string(),
+          list: z
+            .array(
+              z.object({
+                title: z.string(),
+                content: z.string(),
+                image: z.string(),
+              }),
+            )
+            .optional(),
+        })
+        .optional(),
+    }),
+
+    // Feature Showcase Section
+    feature_showcase: z
+      .array(
+        z.object({
+          title: z.string(),
+          subtitle: z.string(),
+          description: z.string(),
+          image: z.string(),
+          button: z
+            .object({
+              label: z.string(),
+              link: z.string(),
+            })
+            .optional(),
+          features: z.array(
             z.object({
               title: z.string(),
               content: z.string(),
-              image: z.string(),
             }),
-          )
-          .optional(),
-      }),
-    }),
+          ),
+        }),
+      )
+      .optional(),
   }),
 });
+
 
 // How It Works Collection Schema
 const howItWorksCollection = defineCollection({
