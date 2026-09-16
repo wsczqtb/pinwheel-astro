@@ -2,6 +2,7 @@ import { marked } from "marked";
 import { useState } from "react";
 
 const FeatureTab = ({ feature_tab }) => {
+  if (!feature_tab) return null;
   const [tab, setTab] = useState(0);
   return (
     <div className="row mt-[120px] items-center">
