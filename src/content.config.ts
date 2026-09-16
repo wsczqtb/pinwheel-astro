@@ -26,11 +26,13 @@ const homepageCollection = defineCollection({
           z.object({
             icon: z.string(),
             title: z.string(),
-            content: z.string(),
+            content: z.string().optional(),
+            items: z.array(z.string()).optional(),
           }),
         )
         .optional(),
     }),
+
 
     service: z.object({
       homepage_tab: z
