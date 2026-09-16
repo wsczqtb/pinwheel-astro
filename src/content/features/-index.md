@@ -8,8 +8,8 @@ banner:
   content: "统一数据、流程和协作方式，让运营、供应链、财务与管理层围绕同一套经营数据工作。"
   image: "/images/features-banner-img.png"
   button:
-    label: 预约产品演示
-    link: "/contact"
+    label: 立即使用
+    link: "https://www.9810yun.com/"
     enable: true
 
 project_management:
@@ -44,10 +44,10 @@ project_management:
       - 统一管理多店铺业务
     buttons:
       - label: 预约产品演示
-        link: "/contact"
+        link: "https://www.9810yun.com/"
         enable: true
       - label: 了解更多
-        link: "#"
+        link: "https://www.9810yun.com/"
         outline: true
         enable: true
 
@@ -70,8 +70,8 @@ feature_showcase:
     description: "跨境业务通常同时经营多个平台、多个站点和多个店铺。订单、商品、企业主体与报关资料分散在不同后台，频繁切换容易造成信息遗漏或主体混用。9810 云把店铺作为业务入口，集中查看各店铺的商品、订单和推单进度，并关联公司、品牌与汇率等基础资料，让后续采购、库存、报关和推单都有清晰的数据来源。"
     image: "/images/features/dashboard-01-store.png"
     button:
-      label: "查看产品功能"
-      link: "#"
+      label: "立即使用"
+      link:"https://www.9810yun.com/"
     features:
       - title: "店铺档案统一"
         content: "集中名下店铺资料，并关联对应公司主体、品牌和业务信息。创建商品、报关单或推单记录时，可以根据对应公司识别业务归属。"
@@ -83,8 +83,8 @@ feature_showcase:
     description: "针对跨境电商出口海外仓业务，9810 云支持手工创建海外仓订仓单，也可以从已有报关单同步生成推单记录。业务人员完成商品、数量、价格和运杂费核对后即可发起推单；遇到信息调整或申报失败，可以修改资料后重新推送，并持续查看申报状态和业务明细。"
     image: "/images/features/dashboard-02-push.png"
     button:
-      label: "查看产品功能"
-      link: "#"
+      label: "立即使用"
+      link: "https://www.9810yun.com/"
     features:
       - title: "单票与批量推单"
         content: "单票资料确认后直接发起推单；多条待处理记录可以统一选择并批量推送。"
@@ -100,8 +100,8 @@ feature_showcase:
     description: "跨境出口库存分布在境内仓库和境外仓库，单看某一个仓库很难判断商品真实状态。9810 云以商品和仓库为核心集中管理库存明细，记录入库、调拨、盘点和组装等变化，为采购备货、仓库作业和报关申报提供一致的库存口径。"
     image: "/images/features/dashboard-03-inventory.png"
     button:
-      label: "查看产品功能"
-      link: "#"
+      label:"立即使用"
+      link: "https://www.9810yun.com/"
     features:
       - title: "多仓库存统一查看"
         content: "按照仓库、商品、SKU 和库存状态查询库存，明确展示不同仓库的商品数量与分布。"
@@ -117,8 +117,8 @@ feature_showcase:
     description: "报关业务涉及企业主体、境外收货人、HSCode、申报要素、价格、箱件数、毛净重和贸易条款等大量信息。9810 云把企业与商品资料集中维护并关联到报关单，支持简易和完整两种录入方式；完成业务数据后，可继续生成装箱单、出口发票、合同及相关报关资料，减少在多个模板中重复复制。"
     image: "/images/features/dashboard-04-customs.png"
     button:
-      label: "查看产品功能"
-      link: "#"
+      label: "立即使用"
+      link:"https://www.9810yun.com/"
     features:
       - title: "简易与完整报关"
         content: "资料未完全收齐时，使用简易录入先建立报关草稿；需要正式完善申报资料时切换到完整录入，已经填写的内容继续保留。"
@@ -132,8 +132,8 @@ feature_showcase:
     description: "进销存不只是记录库存数量，更要说明货物从哪里采购、何时到货、如何入库与调拨、通过哪张报关单出口，以及最终进入哪个店铺或仓库。9810 云把采购、出入库、调拨、盘点和组装业务与产品、仓库及报关记录关联起来，形成连续的货物业务台账。"
     image: "/images/features/dashboard-05-invoicing.png"
     button:
-      label: "查看产品功能"
-      link: "#"
+      label: "立即使用"
+      link: "https://www.9810yun.com/"
     features:
       - title: "采购与供应商管理"
         content: "统一管理供应商、采购产品和采购单。采购商品可选择现有产品信息、辅料包装或公共耗材，防止库存 SKU 与采购名称不符合。"
