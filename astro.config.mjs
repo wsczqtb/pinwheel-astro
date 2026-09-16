@@ -52,7 +52,7 @@ export default defineConfig({
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   vite: { plugins: [tailwindcss()] },
-  fonts: fontsConfig,
+  /*fonts: fontsConfig,*/
   integrations: [
     react(),
     sitemap(),
