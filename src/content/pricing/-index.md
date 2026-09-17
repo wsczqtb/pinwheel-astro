@@ -5,12 +5,12 @@ meta_title: ""
 description: ""
 image: ""
 pricing_card:
-  - title: 基础版
-    pre_currency: ¥
-    post_currency: /年
-    price: 50
+  - title: 试用版
+    pre_currency: "" 
+    post_currency: "" 
+    price: 试用期3个月
     icon: FiBox
-    description: "适合初创团队，1家公司主体，覆盖核心报关与库存流程。"
+    description: ""
     featured: false
     buttons:
       buy_now:
@@ -22,16 +22,17 @@ pricing_card:
     services:
       title: 计费说明
       list:
-        - "基础额度：1家公司主体"
-        - "增量：每增加1家公司50元/年"
-        - "试用期：3个月"
+        - "基础额度：13家公司主体"
+        - "产品：500个"
+        - "用户：3位"
+        - "文件：200M"
 
   - title: 标准版
     pre_currency: ¥
     post_currency: /年
     price: 100
     icon: FiBriefcase
-    description: "按公司主体区分，基础包含3家公司，超出按年加购"
+    description: ""
     featured: true
     buttons:
       buy_now:
@@ -43,17 +44,19 @@ pricing_card:
     services:
       title: 计费说明
       list:
-        - "基础额度：3家公司主体"
-        - "增量：每增加1家公司50元/年"
-        - "试用期：3个月"
-
+        - "基础额度：13家公司主体"
+        - "产品：500个"
+        - "用户：3位"
+        - "文件：200M"
+    
   - title: 企业版
-    pre_currency: ¥
-    post_currency: /年
+    pre_currency: ""
+    post_currency: ""
     price: 200
     icon: FiTable
     description: "适合多主体、多仓库大型卖家，基础包含10家公司，专属客服支持。"
     featured: false
+    billing_only: true
     buttons:
       buy_now:
         label: 立即开通
