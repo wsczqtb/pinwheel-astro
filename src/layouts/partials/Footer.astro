@@ -1,28 +1,45 @@
 ---
 import Logo from "@/components/Logo.astro";
 import config from "@/config/config.json";
+import menu from "@/config/menu.json";
 import { markdownify } from "@/lib/utils/textConverter";
 const { copyright, location, footer_description } = config.params;
+const { footer } = menu;
 ---
 
 <footer class="footer bg-light">
   <div class="container">
     <div class="gx-5 row pb-10 pt-[52px]">
       {/* 左列：Logo + 描述 */}
-      <div class="col-12 mt-12 md:col-6 lg:col-6">
+      <div class="col-12 mt-12 md:col-4 lg:col-4">
         <Logo />
         <p class="mt-6">
           {footer_description}
         </p>
       </div>
 
-      {/* 右列：Location & Contact + 地址 + 图片 */}
-      <div class="col-12 mt-12 md:col-6 lg:col-6">
-        <h6>Location & Contact</h6>
+      {/* 中列：菜单导航链接 */}
+      <div class="col-12 mt-12 md:col-3 lg:col-3">
+        <h6>快速链接</h6>
+        <ul class="mt-4">
+          {
+            footer.map((item) => (
+              <li class="mb-2">
+                <a href={item.url} class="transition-colors hover:text-primary">
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      {/* 右列：地址 + 二维码 */}
+      <div class="col-12 mt-12 md:col-5 lg:col-5">
+        <h6>联系我们</h6>
         <ul class="mt-4">
           <li class="mb-2">{location}</li>
         </ul>
-        {/* 办公地址下面的图片，把图片放到 public/images/ 目录下 */}
         <img
           src="/images/footer-contact.png"
           alt="联系我们"
