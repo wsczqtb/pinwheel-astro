@@ -5,6 +5,7 @@
     { "name": "联系我们", "url": "/contact" }
   ],
   "footer": [
+    { "name": "首页", "url": "/" },
     { "name": "价格", "url": "/pricing" },
     { "name": "联系我们", "url": "/contact" }
   ]
