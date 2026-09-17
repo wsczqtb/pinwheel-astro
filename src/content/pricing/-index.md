@@ -58,13 +58,12 @@ pricing_card:
     billing_only: true
     buttons:
       buy_now:
-        label: 立即开通
+        label: 增量购买
         link: "https://erp.9810yun.com/"
       free_trial:
         label: 咨询详情
         link: "/contact"
     services:
-      title: 增量说明
       list:
         - "公司：每增加1家公司50元/年"
         - "产品：超过基础额度每500个产品50元/年"
