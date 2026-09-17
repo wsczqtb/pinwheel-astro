@@ -5,6 +5,9 @@ import menu from "@/config/menu.json";
 import { markdownify } from "@/lib/utils/textConverter";
 const { copyright, location, footer_description } = config.params;
 const { footer } = menu;
+
+const companyName = "深圳市灵犀百运科技有限公司";
+const icpNumber = "粤ICP备2025506628号";
 ---
 
 <footer class="footer bg-light">
@@ -13,13 +16,11 @@ const { footer } = menu;
       {/* 左列：Logo + 描述 */}
       <div class="col-12 mt-12 md:col-4 lg:col-4">
         <Logo />
-        <p class="mt-6">
-          {footer_description}
-        </p>
+        <p class="mt-6">{footer_description}</p>
       </div>
 
-      {/* 中列：菜单导航链接 */}
-      <div class="col-12 mt-12 md:col-3 lg:col-3">
+      {/* 菜单列 */}
+      <div class="col-12 mt-12 md:col-2 lg:col-2">
         <h6>菜单</h6>
         <ul class="mt-4">
           {
@@ -34,25 +35,38 @@ const { footer } = menu;
         </ul>
       </div>
 
-      {/* 右列：地址 + 二维码 */}
-      <div class="col-12 mt-12 md:col-5 lg:col-5">
+      {/* 联系我们列 */}
+      <div class="col-12 mt-12 md:col-4 lg:col-4">
         <h6>联系我们</h6>
-        <ul class="mt-4">
-          <li class="mb-2">{location}</li>
-        </ul>
+        <p class="mt-4">{companyName}</p>
+        <p class="mt-2">{location}</p>
+      </div>
+
+      {/* 右列：二维码 */}
+      <div class="col-12 mt-12 md:col-2 lg:col-2">
         <img
-          src="/images/footer-contact.png"
-          alt="联系我们"
-          class="mt-4 w-full max-w-[240px] rounded-lg"
+          src="/images/qrcode.png"
+          alt="扫码关注"
+          class="w-full max-w-[120px] rounded-lg"
         />
       </div>
     </div>
   </div>
   <div class="container max-w-[1440px]">
     <div
-      class="footer-copyright mx-auto border-t border-border pb-10 pt-7 text-center"
+      class="footer-copyright mx-auto flex flex-col justify-between border-t border-border pb-10 pt-7 md:flex-row md:items-center"
     >
-      <p class="content text-text" set:html={markdownify(copyright)} />
+      <p class="content text-text">
+        Copyright © 2025-2026 9810yun.com All Rights Reserved.
+      </p>
+      <a
+        href="https://beian.miit.gov.cn"
+        target="_blank"
+        rel="noopener"
+        class="mt-2 text-primary md:mt-0"
+      >
+        {icpNumber}
+      </a>
     </div>
   </div>
 </footer>
