@@ -2,11 +2,13 @@
   "main": [
     { "name": "首页", "url": "/" },
     { "name": "价格", "url": "/pricing" },
+    { "name": "帮助中心", "url": "https://help.9810yun.com/" },
     { "name": "联系我们", "url": "/contact" }
   ],
   "footer": [
     { "name": "首页", "url": "/" },
     { "name": "价格", "url": "/pricing" },
+    { "name": "帮助中心", "url": "https://help.9810yun.com/" },
     { "name": "联系我们", "url": "/contact" }
   ]
 }
