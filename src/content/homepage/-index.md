@@ -9,7 +9,7 @@ banner:
     link: "https://www.9810yun.com/"
 
 key_features:
-  title: "覆盖跨境业务全流程的核心能力"
+  title: "跨境业务全流程核心能力"
   description: "从商品采购到订单回款，统一关键数据和操作入口，减少重复表格、人工核对与跨部门沟通。"
   feature_list:
     - icon: "FiBriefcase"
