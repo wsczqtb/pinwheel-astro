@@ -98,6 +98,8 @@ const { pathname } = Astro.url;
               <li class="nav-item">
                 <a
                   href={menu.url}
+                  target={menu.url.startsWith("http") ? "_blank" : undefined}
+                  rel={menu.url.startsWith("http") ? "noopener" : undefined}
                   class={`nav-link inline-block lg:block ${
                     (pathname === `${menu.url}/` || pathname === menu.url) &&
                     "active"
