@@ -20,8 +20,10 @@ pricing_card:
         label: 咨询详情
         link: "/contact"
     services:
+      title: 使用说明
       list:
         - "试用版与标准版功能一致"
+        - "试用期推单、报关数量不限"
         - "到期后试用数据保存1年"
         - "升级为标准版原始数据可保留"
 
@@ -63,6 +65,7 @@ pricing_card:
         label: 咨询详情
         link: "/contact"
     services:
+      title: 增量说明
       list:
         - "公司：每增加1家公司50元/年"
         - "产品：每增加500个产品50元/年"
