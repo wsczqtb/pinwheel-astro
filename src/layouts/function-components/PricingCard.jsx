@@ -109,7 +109,7 @@ const PricingCard = ({ item }) => {
         </div>
         <div className="text-center">
           <a
-            className="btn btn-primary block h-12 w-full rounded-[50px] leading-7.5"
+            className="btn btn-primary block h-12 w-full rounded-[50px] leading-7.5 text-base"
             href={item.buttons.buy_now.link}
           >
             {item.buttons.buy_now.label}
