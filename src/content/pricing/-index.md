@@ -54,7 +54,7 @@ pricing_card:
     post_currency: ""
     price: 0
     icon: FiTable
-    description: "适合多主体、多仓库大型卖家，基础包含10家公司，专属客服支持。"
+    description: ""
     featured: false
     billing_only: true
     buttons:
@@ -65,7 +65,7 @@ pricing_card:
         label: 咨询详情
         link: "/contact"
     services:
-      title: 计费说明
+      title: 增量说明
       list:
         - "公司：每增加1家公司50元/年"
         - "产品：超过基础额度每500个产品50元/年"
