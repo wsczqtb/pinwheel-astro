@@ -1,80 +1,138 @@
-    ----
-title: Features
-meta_title: Feature Section
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-draft: false
-
+---
+title: 产品功能
+meta_title: "产品功能｜9810 云 ERP"
+description: "覆盖多平台店铺、订单、库存、采购、物流、财务和经营分析。"
 banner:
-  enable: true
-  title: "Feature Banner Title"
-  subtitle: "Banner subtitle text"
-  image: "/images/banner-feature.png"
+  title: "连接跨境业务的每一个关键环节"
+  content: "统一数据、流程和协作方式，让运营、供应链、财务与管理层围绕同一套经营数据工作。"
+  image: "/images/features-banner-img.png"
+  button:
+    label: 立即使用
+    link: "https://www.9810yun.com/"
+    enable: true
+    
 project_management:
-  enable: true
-  title: "Project Management"
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-sections:
-  - name: feature-list
-    enable: true
-    title: The Highlighting Part Of Our Solution
-    subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
-    features:
-      - title: Live Caption
-        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        icon: "tabler:subtitles"
-      - title: Smart Reply
-        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        icon: "tabler:message-circle-reply"
-      - title: Sound Amplifier
-        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        icon: "tabler:volume-2"
-      - title: Sound Amplifier
-        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        icon: "tabler:volume"
-      - title: Smart Reply
-        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        icon: "tabler:message-circle-reply"
-      - title: Live Caption
-        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        icon: "tabler:subtitles"
-  - name: feature-with-image
-    enable: true
-    title: Prevent failure from impacting your reputation
-    subtitle: We build the infrastructure, you can.
-    image: "/images/feature-image.png"
-    points:
-      - title: Habit building essential choose habit
-        description: Get an overview of Habit Calendars.
-      - title: Start building with Habitify platform
-        description: Accept payments any country in this whole universe.
-      - title: Support more than 119 country world
-        description: Open transaction with more than currencies
-      - title: Customer Service with 79 languages
-        description:
-  - name: testimonial
-    enable: true
-    title: Accountability that works for you
-    subtitle: Our platform helps build secure onboarding authentica experiences & engage your users.
-    testimonials:
-      - name: David Cameron
-        designation: meta limited
-        content: Our platform helps build secure onboarding authentica experiences & engage your users. We build .
-        image: "/images/user-1.png"
-      - name: David Cameron
-        designation: meta limited
-        content: Our platform helps build secure onboarding authentica experiences & engage your users. We build .
-        image: "/images/user-2.png"
-      - name: David Cameron
-        designation: meta limited
-        content: Our platform helps build secure onboarding authentica experiences & engage your users. We build .
-        image: "/images/user-3.png"
-  - name: cta
-    enable: true
-    title: Helping teams in the world with focus
-    content: Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.
+  title: "覆盖跨境业务全流程的核心能力"
+  content: "从商品、订单、采购到库存、物流和财务，用一套系统连接团队与经营数据。"
+  management:
+    title: 核心业务模块
+    projects:
+      - title: 店铺管理
+        content: "集中查看不同店铺的订单、商品与推单进度等数据。"
+        icon: FiLock
+      - title: 9810 推单
+        content: "支持手工建单、报关单同步、修改重推，并自动同步海关全流程状态。"
+        icon: FiTv
+      - title: 库存管理
+        content: "统一管理本地仓、海外仓及在途库存。"
+        icon: FiTool
+      - title: 报关处理
+        content: "一键生成装箱单、发票、合同和报关资料，减少重复制单和人工核对。"
+        icon: FiLock
+      - title: 进销存
+        content: "报关数据自动进入进销存台账，采购、销售、出入库、调拨和盘点全程关联。"
+        icon: FiTv
+        
+  feature_service:
+    title: "用一套数据看清经营关键环节"
+    description: "运营、供应链和财务使用同一份业务数据，发现问题后可快速追溯到店铺、订单和商品。"
+    image: "/images/features/feature-img-1.png"
+    list:
+      - 实时掌握销售与利润
+      - 提前识别库存风险
+      - 统一管理多店铺业务
+    buttons:
+      - label: 预约产品演示
+        link: "https://www.9810yun.com/"
+        enable: true
+      - label: 了解更多
+        link: "https://www.9810yun.com/"
+        outline: true
+        enable: true
+        
+  feature_tab:
+    title: "采购、仓储与物流协同管理"
+    list:
+      - title: "多仓库存统一查看"
+        content: "统一查看本地仓、海外仓、FBA 仓和在途库存，及时掌握可售数量与库存周转。"
+        image: "/images/features/feature-img-2.png"
+      - title: "智能补货与采购协同"
+        content: "结合销量、库存和运输时效制定补货计划，串联采购、入库与调拨流程。"
+        image: "/images/features/feature-img-1.png"
+      - title: "物流履约全程追踪"
+        content: "从订单审核、发货到在途和签收统一追踪，快速定位并处理异常订单。"
+        image: "/images/features/feature-img-2.png"
+feature_showcase:
+  - title: "店铺管理"
+    subtitle: "多个店铺，一处查看；每一笔出口业务都有明确归属"
+    description: "跨境业务通常同时经营多个平台、多个站点和多个店铺。订单、商品、企业主体与报关资料分散在不同后台，频繁切换容易造成信息遗漏或主体混用。9810 云把店铺作为业务入口，集中查看各店铺的商品、订单和推单进度，并关联公司、品牌与汇率等基础资料，让后续采购、库存、报关和推单都有清晰的数据来源。"
+    image: "/images/features/dashboard-01-store.png"
     button:
-      enable: true
-      label: Get Started
-      link: "#"
-    image: "/images/cta-image.png"
+      label: "立即使用"
+      link: "https://www.9810yun.com/"
+    features:
+      - title: "店铺档案统一"
+        content: "集中名下店铺资料，并关联对应公司主体、品牌和业务信息。创建商品、报关单或推单记录时，可以根据对应公司识别业务归属。"
+      - title: "跨店商品集中查看"
+        content: "支持查看不同店铺使用的商品资料，并关联产品档案、销售价格、境内报关、境外清关和包装规格。"
+  - title: "9810 推单"
+    subtitle: "从填写报关单到单一窗口查看，9810 推单全流程集中处理"
+    description: "针对跨境电商出口海外仓业务，9810 云支持手工创建海外仓订仓单，也可以从已有报关单同步生成推单记录。业务人员完成商品、数量、价格和运杂费核对后即可发起推单；遇到信息调整或申报失败，可以修改资料后重新推送，并持续查看申报状态和业务明细。"
+    image: "/images/features/dashboard-02-push.png"
+    button:
+      label: "立即使用"
+      link: "https://www.9810yun.com/"
+    features:
+      - title: "单票与批量推单"
+        content: "单票资料确认后直接发起推单；多条待处理记录可以统一选择并批量推送。"
+      - title: "手工建单或报关单同步"
+        content: "根据业务资料手工创建推单记录，也可选择一张或多张报关单同步生成，减少相同信息二次录入。"
+      - title: "修改重推与明细查看"
+        content: "申报信息发生变化或推单失败时，修改对应记录后重新推送；详情中可以查看订单基础信息和完整商品列表。"
+      - title: "申报过程透明"
+        content: "从待申报到已结关的状态集中展示。"
+  - title: "库存管理"
+    subtitle: "本地仓与海外仓，放在同一张库存地图上"
+    description: "跨境出口库存分布在境内仓库和境外仓库，单看某一个仓库很难判断商品真实状态。9810 云以商品和仓库为核心集中管理库存明细，记录入库、调拨、盘点和组装等变化，为采购备货、仓库作业和报关申报提供一致的库存口径。"
+    image: "/images/features/dashboard-03-inventory.png"
+    button:
+      label: "立即使用"
+      link: "https://www.9810yun.com/"
+    features:
+      - title: "多仓库存统一查看"
+        content: "按照仓库、商品、SKU 和库存状态查询库存，明确展示不同仓库的商品数量与分布。"
+      - title: "本地仓库存管理"
+        content: "记录境内仓库的采购入库、备货、组装与出口出库，为报关商品和数量提供业务依据。"
+      - title: "海外仓库存管理"
+        content: "按照海外仓查看已入仓商品和数量，让国内备货团队及时了解境外库存分布。"
+      - title: "摊销计划"
+        content: "公共耗材采购入库时，一键设定按月摊销计划，系统自动计算每期摊销金额。"
+  - title: "报关处理"
+    subtitle: "商品资料自动复用，一套数据生成完整报关资料"
+    description: "报关业务涉及企业主体、境外收货人、HSCode、申报要素、价格、箱件数、毛净重和贸易条款等大量信息。9810 云把企业与商品资料集中维护并关联到报关单，支持简易和完整两种录入方式；完成业务数据后，可继续生成装箱单、出口发票、合同及相关报关资料，减少在多个模板中重复复制。"
+    image: "/images/features/dashboard-04-customs.png"
+    button:
+      label: "立即使用"
+      link: "https://www.9810yun.com/"
+    features:
+      - title: "简易与完整报关"
+        content: "资料未完全收齐时，使用简易录入先建立报关草稿；需要正式完善申报资料时切换到完整录入，已经填写的内容继续保留。"
+      - title: "商品明细批量关联"
+        content: "从商品列表中选择本票申报商品，补充装箱规格、报关数量、法定数量、箱件数和毛净重等批次数据。"
+      - title: "衔接 9810 推单"
+        content: "报关单确认后同步生成相应推单记录。"
+  - title: "进销存"
+    subtitle: "从采购到出口，让货物流转与报关数据自动对上"
+    description: "进销存不只是记录库存数量，更要说明货物从哪里采购、何时到货、如何入库与调拨、通过哪张报关单出口，以及最终进入哪个店铺或仓库。9810 云把采购、出入库、调拨、盘点和组装业务与产品、仓库及报关记录关联起来，形成连续的货物业务台账。"
+    image: "/images/features/dashboard-05-invoicing.png"
+    button:
+      label: "立即使用"
+      link: "https://www.9810yun.com/"
+    features:
+      - title: "采购与供应商管理"
+        content: "统一管理供应商、采购产品和采购单。采购商品可选择现有产品信息、辅料包装或公共耗材，防止库存 SKU 与采购名称不符合。"
+      - title: "采购到货与入库衔接"
+        content: "采购商品到货后关联入库记录，分别查看采购数量、实际到货数量和入库数量，便于识别未到货、少到货和分批入库。"
+      - title: "销售与出库业务关联"
+        content: "将销售业务与商品、仓库及出库记录关联，保留商品从销售需求到履约的业务路径。"
 ---
