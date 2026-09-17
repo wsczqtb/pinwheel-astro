@@ -6,8 +6,8 @@ description: ""
 image: ""
 pricing_card:
   - title: 试用版
-    pre_currency: "" 
-    post_currency: "" 
+    pre_currency: 
+    post_currency: 
     price: 试用期3个月
     icon: FiBox
     description: ""
