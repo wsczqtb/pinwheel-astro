@@ -1,7 +1,10 @@
+import { useState } from "react";
 import DynamicIcon from "@/helpers/DynamicIcon";
 
 const PricingCard = ({ item }) => {
-  // 仅计费说明模式（企业版）
+  const [showModal, setShowModal] = useState(false);
+
+  // 仅计费说明模式（按需增购）
   if (item.billing_only) {
     return (
       <div className="mt-8 px-3 md:col-6 lg:col-4 lg:mt-0" key={item.title}>
@@ -10,7 +13,6 @@ const PricingCard = ({ item }) => {
             item.featured ? "-mt-16 border border-primary " : undefined
           }`}
         >
-          {/* 顶部：计费说明标题（左）+ icon（右） */}
           <div className="flex items-center justify-between">
             <h4 className="h6">{item.services.title}</h4>
             <span
@@ -23,8 +25,6 @@ const PricingCard = ({ item }) => {
               <DynamicIcon icon={item.icon} className="h-8 w-8 font-semibold" />
             </span>
           </div>
-
-          {/* 下面：计费说明列表 */}
           <ul className="mt-6">
             {item.services.list.map((service, i) => (
               <li className="mb-3 text-sm" key={`service-${i}`}>
@@ -36,7 +36,6 @@ const PricingCard = ({ item }) => {
                   fill="currentColor"
                   strokeWidth="0"
                   viewBox="0 0 16 16"
-                  class="mr-1 inline size-3.5 text-primary"
                   height="1em"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +51,7 @@ const PricingCard = ({ item }) => {
     );
   }
 
-  // 完整卡片模式（基础版、标准版）
+  // 完整卡片模式
   return (
     <div className="mt-8 px-3 md:col-6 lg:col-4 lg:mt-0" key={item.title}>
       <div
@@ -64,11 +63,11 @@ const PricingCard = ({ item }) => {
           <div>
             <h2 className="h3">{item.title}</h2>
             <p className="mt-3 text-2xl text-text-dark">
-             {item.price === 0 ? (
-               item.post_currency
-             ) : (
-               <>
-                 {item.pre_currency} {item.price}.00 {item.post_currency}
+              {item.price === 0 ? (
+                item.post_currency
+              ) : (
+                <>
+                  {item.pre_currency} {item.price}.00 {item.post_currency}
                 </>
               )}
             </p>
@@ -86,7 +85,6 @@ const PricingCard = ({ item }) => {
         <p className="mt-6">{item.description}</p>
         <div className="my-6 border-y border-border py-6">
           <h4 className="h6">{item.services.title}</h4>
-
           <ul className="mt-6">
             {item.services.list.map((service, i) => (
               <li className="mb-3 text-sm" key={`service-${i}`}>
@@ -98,7 +96,6 @@ const PricingCard = ({ item }) => {
                   fill="currentColor"
                   strokeWidth="0"
                   viewBox="0 0 16 16"
-                  class="mr-1 inline size-3.5 text-primary"
                   height="1em"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
@@ -117,9 +114,9 @@ const PricingCard = ({ item }) => {
           >
             {item.buttons.buy_now.label}
           </a>
-          <a
+          <button
             className="mt-6 inline-flex items-center text-text-dark"
-            href={item.buttons.free_trial.link}
+            onClick={() => setShowModal(true)}
           >
             {item.buttons.free_trial.label}
             <svg
@@ -135,9 +132,36 @@ const PricingCard = ({ item }) => {
                 fill="currentColor"
               ></path>
             </svg>
-          </a>
+          </button>
         </div>
       </div>
+
+      {/* 二维码弹窗 */}
+      {showModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+          onClick={() => setShowModal(false)}
+        >
+          <div
+            className="relative rounded-2xl bg-white p-8 text-center shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute right-3 top-3 text-2xl text-gray-400 hover:text-gray-600"
+              onClick={() => setShowModal(false)}
+            >
+              ×
+            </button>
+            <h3 className="mb-4 text-lg font-bold">扫码咨询</h3>
+            <img
+              src="/images/qrcode.png"
+              alt="咨询二维码"
+              className="mx-auto w-48"
+            />
+            <p className="mt-4 text-sm text-gray-500">微信扫码，一对一咨询</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
