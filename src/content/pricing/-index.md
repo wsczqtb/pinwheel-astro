@@ -20,11 +20,10 @@ pricing_card:
         label: 咨询详情
         link: "/contact"
     services:
-      title: 计费说明
       list:
-        - "公司：3家公司"
-        - "产品：500个"
-
+        - "试用版与标准版功能一致"
+        - "到期后试用数据保存1年"
+        - "升级为标准版原始数据可保留"
 
   - title: 标准版
     pre_currency: ¥
