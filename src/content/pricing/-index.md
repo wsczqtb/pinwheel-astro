@@ -49,10 +49,10 @@ pricing_card:
         - "用户：3位"
         - "文件：200M"
     
-  - title: 企业版
+  - title: 增量
     pre_currency: ""
     post_currency: ""
-    price: 200
+    price: 0
     icon: FiTable
     description: "适合多主体、多仓库大型卖家，基础包含10家公司，专属客服支持。"
     featured: false
@@ -67,9 +67,10 @@ pricing_card:
     services:
       title: 计费说明
       list:
-        - "基础额度：10家公司主体"
-        - "增量：每增加1家公司50元/年"
-        - "专属客服一对一支持"
+        - "公司：每增加1家公司50元/年"
+        - "产品：超过基础额度每500个产品50元/年"
+        - "用户：每多1为用户50元/年"
+        - "文件：1GB100元/年"
 
 faq:
   title: 常见问题
