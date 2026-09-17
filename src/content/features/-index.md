@@ -1,8 +1,18 @@
----
+    ----
 title: Features
 meta_title: Feature Section
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 draft: false
+# 新增schema要求的必填字段
+banner:
+  enable: true
+  title: "Feature Banner Title"
+  subtitle: "Banner subtitle text"
+  image: "/images/banner-feature.png"
+project_management:
+  enable: true
+  title: "Project Management"
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 sections:
   - name: feature-list
     enable: true
@@ -68,4 +78,3 @@ sections:
       link: "#"
     image: "/images/cta-image.png"
 ---
-
