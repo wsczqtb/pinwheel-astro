@@ -64,7 +64,13 @@ const PricingCard = ({ item }) => {
           <div>
             <h2 className="h3">{item.title}</h2>
             <p className="mt-3 text-2xl text-text-dark">
-              {item.pre_currency} {item.price}.00 {item.post_currency}
+             {item.price === 0 ? (
+               item.post_currency
+             ) : (
+               <>
+                 {item.pre_currency} {item.price}.00 {item.post_currency}
+                </>
+              )}
             </p>
           </div>
           <span
