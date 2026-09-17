@@ -3,7 +3,7 @@ title: Features
 meta_title: Feature Section
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 draft: false
-# 新增schema要求的必填字段
+
 banner:
   enable: true
   title: "Feature Banner Title"
