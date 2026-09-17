@@ -15,7 +15,7 @@ pricing_card:
     buttons:
       buy_now:
         label: 立即开通
-        link: "#"
+        link: "erp.9810yun.com"
       free_trial:
         label: 咨询详情
         link: "/contact"
