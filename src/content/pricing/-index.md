@@ -25,7 +25,7 @@ pricing_card:
         - "试用版与标准版功能一致"
         - "试用期推单、报关数量不限"
         - "到期后试用数据保存1年"
-        - "升级为标准版原始数据可保留"
+        - "升级为标准版数据可保留"
 
   - title: 标准版
     pre_currency: ¥
@@ -51,7 +51,7 @@ pricing_card:
     
   - title: 按需增购
     pre_currency: ""
-    post_currency: ""
+    post_currency: "标准版增购"
     price: 0
     icon: FiTable
     description: ""
