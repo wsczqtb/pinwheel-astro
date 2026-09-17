@@ -22,10 +22,9 @@ pricing_card:
     services:
       title: 计费说明
       list:
-        - "公司：13家公司主体"
+        - "公司：3家公司"
         - "产品：500个"
-        - "用户：3位"
-        - "文件：200M"
+
 
   - title: 标准版
     pre_currency: ¥
@@ -44,10 +43,10 @@ pricing_card:
     services:
       title: 计费说明
       list:
-        - "公司：3家公司主体"
-        - "产品：500个"
-        - "用户：3位"
-        - "文件：200M"
+        - "公司：3家公司"
+        - "产品：500个SKU"
+        - "用户：3位用户"
+        - "文件：200M存储空间"
     
   - title: 按需增购
     pre_currency: ""
