@@ -20,7 +20,7 @@ pricing_card:
         label: 咨询详情
         link: "/contact"
     services:
-      title: 使用说明
+      title: 试用说明
       list:
         - "试用版与标准版功能一致"
         - "试用期推单、报关数量不限"
@@ -42,7 +42,7 @@ pricing_card:
         label: 咨询详情
         link: "/contact"
     services:
-      title: 计费说明
+      title: 包含数据量
       list:
         - "公司：3家公司"
         - "产品：500个SKU"
