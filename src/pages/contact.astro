@@ -6,16 +6,16 @@ import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
 
-const entry = (await getEntry(
-  "contact",
-  "-index"
-)) as CollectionEntry<"contact">;
-const { contact_form_action } = config.params;
+const entry = (await getEntry("contact", "-index")) as CollectionEntry<"contact">;
 const contact = entry.data;
 const page_data = {
   ...contact,
   content: entry.body,
 };
+
+const companyName = "深圳市灵犀百运科技有限公司";
+const address = "深圳市龙岗区园山街道大运软件小镇35栋2楼";
+const email = config.params.email;
 ---
 
 <Base
@@ -32,59 +32,32 @@ const page_data = {
 
   <section class="section pt-0">
     <div class="container">
-      <div class="row">
-        <div class="mb-10 text-center md:col-6 md:order-2 md:mb-0 md:pt-9">
-          <div class="contact-img relative inline-flex pb-5 pl-5">
-            <Image
-              src="/images/contact-img.png"
-              height={544}
-              width={500}
-              alt=""
-            />
-            <Image
-              class="absolute bottom-0 left-0 -z-[1] h-14 w-14"
-              src="/images/shape-2.png"
-              alt=""
-              height={56}
-              width={56}
-            />
-          </div>
+      <div class="row items-center">
+        {/* 左列：图片 */}
+        <div class="md:col-6">
+          <Image
+            src="/images/contact-img.png"
+            alt="联系我们"
+            class="w-full rounded-xl object-cover"
+          />
         </div>
-        <div class="md:col-6 md:order-1">
-          <form
-            class="lg:max-w-[484px]"
-            action={contact_form_action}
-            method="POST"
-          >
-            <div class="form-group mb-5">
-              <label class="form-label" for="name">Full Name</label>
-              <input
-                class="form-control"
-                type="text"
-                id="name"
-                placeholder="你的姓名"
-              />
-            </div>
-            <div class="form-group mb-5">
-              <label class="form-label" for="eamil">Email Adrdess</label>
-              <input
-                class="form-control"
-                type="text"
-                id="email"
-                placeholder="你的邮箱地址"
-              />
-            </div>
-            <div class="form-group mb-5">
-              <label class="form-label" for="message">留言</label>
-              <textarea class="form-control" id="message" cols="30" rows="6"
-              ></textarea>
-            </div>
-            <input
-              class="btn btn-primary block w-full"
-              type="submit"
-              value="发送留言"
+
+        {/* 右列：公司信息 */}
+        <div class="mt-10 md:col-6 md:mt-0 md:pl-12">
+          <h3 class="h4 font-bold text-text-dark">{companyName}</h3>
+
+          <p class="mt-6">公司地点：{address}</p>
+          <p class="mt-3">邮箱：{email}</p>
+
+          {/* 二维码 */}
+          <div class="mt-8">
+            <img
+              src="/images/qrcode.png"
+              alt="扫码关注"
+              class="w-32 rounded-lg border border-border p-2"
             />
-          </form>
+            <p class="mt-2 text-sm text-text">扫码关注</p>
+          </div>
         </div>
       </div>
     </div>
