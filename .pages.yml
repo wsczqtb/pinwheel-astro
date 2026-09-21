@@ -70,13 +70,13 @@ content:
         options:
           multiple: true
           values:
-            - name: amazon-operation
+            - name: 亚马逊运营
               label: 亚马逊运营
-            - name: cross-border
+            - name: 跨境电商
               label: 跨境电商
-            - name: erp-guide
+            - name: ERP教程
               label: ERP教程
-            - name: industry-news
+            - name: 行业资讯
               label: 行业资讯
 
       - name: featured
