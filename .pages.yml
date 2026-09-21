@@ -70,16 +70,6 @@ content:
         options:
           multiple: true
           values:
-            - name: development
-              label: 开发教程
-            - name: design
-              label: 产品设计
-            - name: email marketing
-              label: 邮件营销
-            - name: rate optimization
-              label: 转化率优化
-            - name: updates
-              label: 产品更新
             - name: amazon-operation
               label: 亚马逊运营
             - name: cross-border
