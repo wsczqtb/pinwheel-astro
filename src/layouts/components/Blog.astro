@@ -1,7 +1,6 @@
 ---
 import dateFormat from "@/lib/utils/dateFormat";
 import readingTime from "@/lib/utils/readingTime";
-import { humanize, slugify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
@@ -28,13 +27,6 @@ const { posts } = Astro.props;
             <div class="card-img aspect-video bg-light" aria-hidden="true"></div>
           )}
           <div class="card-content">
-            <div class="card-tags space-x-1">
-              {item.data.categories.map((category) => (
-                <a class="tag" href={`/categories/${slugify(category)}`}>
-                  {humanize(category)}
-                </a>
-              ))}
-            </div>
             <h3 class="h4 card-title">
               <a href={`/blog/${item.id}`}>{item.data.title}</a>
             </h3>
