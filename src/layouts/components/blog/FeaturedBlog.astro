@@ -1,11 +1,9 @@
 ---
-import config from "@/config/config.json";
 import dateFormat from "@/lib/utils/dateFormat";
 import readingTime from "@/lib/utils/readingTime";
-import { humanize, plainify, slugify } from "@/lib/utils/textConverter";
+import { humanize, slugify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
-const { summary_length } = config.settings;
 
 type Props = {
   posts: CollectionEntry<"blog">[];
@@ -37,12 +35,6 @@ const { posts } = Astro.props;
             <h3 class="h4 card-title">
               <a href={`/blog/${post.id}`}>{post.data.title}</a>
             </h3>
-            {post.body && (
-              <p class="mb-4 text-text">
-                {plainify(post.body?.slice(0, Number(summary_length)))}...
-              </p>
-            )}
-
             <div class="card-footer mt-6 flex space-x-4">
               <span class="inline-flex items-center text-xs text-text">
                 <svg
