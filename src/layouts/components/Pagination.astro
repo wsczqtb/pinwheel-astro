@@ -13,7 +13,7 @@ for (let i = 1; i <= totalPages; i++) {
   totalPages > 1 && (
     <nav
       class="mb-4 mt-14 flex items-center justify-center"
-      aria-label="Pagination"
+      aria-label="分页导航"
     >
       {/* previous */}
       {hasPrevPage ? (
@@ -38,7 +38,7 @@ for (let i = 1; i <= totalPages; i++) {
               clip-rule="evenodd"
             />
           </svg>
-          <span>Previous</span>
+          <span>上一页</span>
         </a>
       ) : (
         <span class="  mr-5 flex min-w-[150px] items-center rounded-[50px] border-white bg-white px-4 py-2 text-center capitalize text-text md:px-6 md:py-3 ">
@@ -55,7 +55,7 @@ for (let i = 1; i <= totalPages; i++) {
               clip-rule="evenodd"
             />
           </svg>
-          <span>Previous</span>
+          <span>上一页</span>
         </span>
       )}
 
@@ -89,7 +89,7 @@ for (let i = 1; i <= totalPages; i++) {
           href={`${section ? "/" + section : ""}/page/${currentPage + 1}`}
           class="ml-5 flex items-center rounded-full border px-4 py-2 text-text-dark hover:shadow-lg md:px-6 md:py-3"
         >
-          <span>Next</span>
+          <span>下一页</span>
           <svg
             class="h-5 w-5"
             xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +106,7 @@ for (let i = 1; i <= totalPages; i++) {
         </a>
       ) : (
         <span class="  ml-5 flex min-w-0 items-center rounded-[50px]  border-white bg-white px-4 py-2 text-center capitalize text-text md:px-6 md:py-3 ">
-          <span>Next</span>
+          <span>下一页</span>
           <svg
             class="h-5 w-5"
             xmlns="http://www.w3.org/2000/svg"

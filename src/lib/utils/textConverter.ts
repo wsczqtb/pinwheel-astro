@@ -19,6 +19,15 @@ export const markdownify = (content: string) => {
 export const humanize = (content: string) => {
   if (!content) return null;
 
+  const labels: Record<string, string> = {
+    "amazon-operation": "亚马逊运营",
+    "cross-border": "跨境电商",
+    "erp-guide": "ERP教程",
+    "industry-news": "行业资讯",
+  };
+
+  if (labels[content]) return labels[content];
+
   return content
     .replace(/^[\s_]+|[\s_]+$/g, "")
     .replace(/[_\s]+/g, " ")

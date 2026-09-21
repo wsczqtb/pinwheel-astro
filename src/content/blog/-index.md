@@ -1,7 +1,7 @@
 ---
-title: "Blog"
-page_title: Insight and advice from <br /> our expert team.
-meta_title: Insight and advice from our expert team
+title: "博客"
+page_title: 跨境电商实用指南与行业资讯
+meta_title: 跨境电商实用指南与行业资讯
 description: ""
 image: ""
 ---

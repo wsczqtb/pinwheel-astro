@@ -51,7 +51,7 @@ const currentPosts = recentPost.slice(0, config.settings.pagination);
       </div>
       <FeaturedBlog posts={featuredPost} />
       <BlogCategories categories={categories} />
-      <h2 class="h4 mb-4">Recent Posts</h2>
+      <h2 class="h4 mb-4">最新文章</h2>
       <Blog posts={currentPosts} />
       <Pagination section={"blog"} currentPage={1} totalPages={totalPages} />
     </div>
