@@ -63,6 +63,7 @@ def event_payload() -> dict:
 
 def signed_post(path: str, content: dict) -> dict:
     base_url = required("ZYPLAYER_BASE_URL").rstrip("/")
+    api_key = required("ZYPLAYER_API_KEY")
     private_key = required("ZYPLAYER_RSA_PRIVATE_KEY").replace("\\n", "\n")
 
     request_content = {**content, "salt": hashlib.sha256(os.urandom(32)).hexdigest()}
@@ -72,7 +73,7 @@ def signed_post(path: str, content: dict) -> dict:
 
     response = requests.post(
         f"{base_url}{path}",
-        data={"content": content_json, "encrypt": signature},
+        data={"key": api_key, "content": content_json, "encrypt": signature},
         timeout=30,
     )
     response.raise_for_status()

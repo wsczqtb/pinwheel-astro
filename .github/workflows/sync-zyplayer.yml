@@ -37,6 +37,7 @@ jobs:
       - name: Sync article from ZYPlayer
         env:
           ZYPLAYER_BASE_URL: ${{ secrets.ZYPLAYER_BASE_URL }}
+          ZYPLAYER_API_KEY: ${{ secrets.ZYPLAYER_API_KEY }}
           ZYPLAYER_RSA_PRIVATE_KEY: ${{ secrets.ZYPLAYER_RSA_PRIVATE_KEY }}
           ZYPLAYER_SPACE_ID: ${{ secrets.ZYPLAYER_SPACE_ID }}
           OSS_ENDPOINT: ${{ secrets.OSS_ENDPOINT }}
