@@ -30,8 +30,7 @@ ZYPlayer 发布
 | Secret | 用途 |
 | --- | --- |
 | `ZYPLAYER_BASE_URL` | ZYPlayer 站点地址 |
-| `ZYPLAYER_API_KEY` | ZYPlayer Open API Key |
-| `ZYPLAYER_RSA_PRIVATE_KEY` | API 签名私钥，可保存带 `\n` 的单行值 |
+| `ZYPLAYER_RSA_PRIVATE_KEY` | API 签名私钥，可保存带 `\n` 的单行值；对应公钥配置在 ZYPlayer「开放接口 RSA 公钥」 |
 | `ZYPLAYER_SPACE_ID` | 手动触发时使用的默认空间 ID |
 | `ZYPLAYER_ASSET_HOSTS` | 可选，允许转存图片的额外域名，逗号分隔 |
 | `OSS_ENDPOINT` | OSS Endpoint |
@@ -41,6 +40,8 @@ ZYPlayer 发布
 | `OSS_PUBLIC_URL` | OSS/CDN 公开读取地址 |
 
 工作流只提交 `src/data/remote-posts.json`。Markdown 与图片不会进入 Git 仓库。
+
+ZYPlayer Open API 使用 `content` 和 `encrypt` 表单字段。`encrypt` 是对请求内容 SHA-256 后使用 RSA 私钥生成的十六进制签名；工作流不发送 `key` 或 `signature` 字段。
 
 ## 3. ESA Pages 变量
 
