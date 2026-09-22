@@ -94,6 +94,10 @@ After finishing all the customization, you can create a production build by runn
 npm run build
 ```
 
+## OSS + ESA SSR Blog
+
+This fork can keep the homepage and blog indexes static while rendering ZYPlayer article details from Markdown stored in OSS. See [docs/oss-ssr-blog.md](docs/oss-ssr-blog.md) for the architecture, required variables, and deployment checklist.
+
 <!-- reporting issue -->
 
 ## 🐞 Reporting Issues

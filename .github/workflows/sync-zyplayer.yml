@@ -64,16 +64,16 @@ jobs:
       - name: Build Astro site
         run: pnpm build
 
-      - name: Commit synced article
+      - name: Commit article index
         shell: bash
         run: |
           git diff --check
-          if git diff --quiet -- src/content/blog/zyplayer; then
-            echo "No article changes to commit."
+          if git diff --quiet -- src/data/remote-posts.json; then
+            echo "No index changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/content/blog/zyplayer
-          git commit -m "Sync ZYPlayer article"
+          git add src/data/remote-posts.json
+          git commit -m "Update ZYPlayer article index"
           git push

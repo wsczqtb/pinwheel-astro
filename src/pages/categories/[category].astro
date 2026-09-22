@@ -4,14 +4,13 @@ import BlogCategories from "@/components/blog/BlogCategories.astro";
 import PageHeader from "@/components/PageHeader.astro";
 import Shape from "@/components/Shape.astro";
 import Base from "@/layouts/Base.astro";
-import { getSinglePage } from "@/lib/contentParser.astro";
-import { getTaxonomy } from "@/lib/taxonomyParser.astro";
+import { getBlogCategories, getBlogPosts } from "@/lib/blogPosts";
 import taxonomyFilter from "@/lib/utils/taxonomyFilter";
 import { humanize, slugify } from "@/lib/utils/textConverter";
 
-const categories = await getTaxonomy("blog", "categories");
+const categories = await getBlogCategories();
 export async function getStaticPaths() {
-  const categories = await getTaxonomy("blog", "categories");
+  const categories = await getBlogCategories();
   return categories.map((item) => {
     const category = slugify(item);
     return {
@@ -26,7 +25,7 @@ export async function getStaticPaths() {
 const { category } = Astro.params;
 const { item } = Astro.props;
 
-const posts = await getSinglePage("blog");
+const posts = await getBlogPosts();
 const filterByTags = taxonomyFilter(posts, "categories", category);
 const page_data = {
   index_title: "文章分类",

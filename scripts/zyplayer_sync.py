@@ -18,7 +18,7 @@ from Crypto.Signature import pkcs1_15
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT_DIR = ROOT / "src" / "content" / "blog" / "zyplayer"
+MANIFEST_PATH = ROOT / "src" / "data" / "remote-posts.json"
 DETAIL_PATH = "/openApi/v1/space/page/detail"
 LINK_RE = re.compile(
     r"(?P<prefix>!?\[[^\]]*\]\()(?P<url><https?://[^>]+>|https?://[^)\s]+)(?P<suffix>[^)]*\))"
@@ -111,6 +111,17 @@ def oss_enabled() -> bool:
     return all(os.environ.get(name, "").strip() for name in names)
 
 
+def oss_bucket():
+    import oss2
+
+    auth = oss2.Auth(required("OSS_ACCESS_KEY_ID"), required("OSS_ACCESS_KEY_SECRET"))
+    return oss2.Bucket(auth, required("OSS_ENDPOINT"), required("OSS_BUCKET"))
+
+
+def public_oss_url(object_key: str) -> str:
+    return f"{required('OSS_PUBLIC_URL').rstrip('/')}/{quote(object_key, safe='/')}"
+
+
 def upload_asset(url: str, page_id: str, space_id: str) -> str | None:
     parsed = urlparse(url)
     if parsed.hostname not in allowed_asset_hosts():
@@ -137,13 +148,8 @@ def upload_asset(url: str, page_id: str, space_id: str) -> str | None:
     digest = hashlib.sha256(data).hexdigest()[:12]
     object_key = f"blog/{space_id}/{page_id}/{digest}-{filename}"
 
-    import oss2
-
-    auth = oss2.Auth(required("OSS_ACCESS_KEY_ID"), required("OSS_ACCESS_KEY_SECRET"))
-    bucket = oss2.Bucket(auth, required("OSS_ENDPOINT"), required("OSS_BUCKET"))
-    bucket.put_object(object_key, data, headers={"Content-Type": content_type})
-    public_url = required("OSS_PUBLIC_URL").rstrip("/")
-    return f"{public_url}/{quote(object_key, safe='/')}"
+    oss_bucket().put_object(object_key, data, headers={"Content-Type": content_type})
+    return public_oss_url(object_key)
 
 
 def rewrite_assets(markdown: str, page_id: str, space_id: str) -> str:
@@ -210,9 +216,13 @@ def yaml_string(value: str) -> str:
     return json.dumps(value, ensure_ascii=False)
 
 
-def write_article(page: dict, content: str, payload: dict) -> Path:
+def write_article(page: dict, content: str, payload: dict) -> str:
+    if not oss_enabled():
+        raise RuntimeError("OSS configuration is required for published articles")
+
     page_id = payload["pageId"]
     space_id = payload["spaceId"]
+    article_id = f"zy-{safe_name(space_id)}-{safe_name(page_id)}"
     title = str(page.get("title") or page.get("pageName") or payload.get("pageName") or f"ZYPlayer文章 {page_id}").strip()
     content = FRONTMATTER_RE.sub("", content).strip()
     content = rewrite_assets(content, page_id, space_id)
@@ -221,6 +231,12 @@ def write_article(page: dict, content: str, payload: dict) -> Path:
     if isinstance(cover, str) and cover.startswith(("http://", "https://")) and oss_enabled():
         cover = upload_asset(cover, page_id, space_id) or cover
 
+    published_at = normalize_date(
+        page.get("updateTime") or page.get("publishTime") or page.get("createTime"),
+        payload.get("eventTime"),
+    )
+    article_categories = categories(page, payload)
+    author = str(page.get("author") or payload.get("userName") or "9810云")
     lines = ["---", f"title: {yaml_string(title)}"]
     description = description_from(page, content)
     if description:
@@ -229,10 +245,10 @@ def write_article(page: dict, content: str, payload: dict) -> Path:
         lines.append(f"image: {yaml_string(str(cover))}")
     lines.extend(
         [
-            f"author: {yaml_string(str(page.get('author') or payload.get('userName') or '9810云'))}",
-            f"date: {yaml_string(normalize_date(page.get('updateTime') or page.get('publishTime') or page.get('createTime'), payload.get('eventTime')))}",
+            f"author: {yaml_string(author)}",
+            f"date: {yaml_string(published_at)}",
             "categories:",
-            *[f"  - {yaml_string(item)}" for item in categories(page, payload)],
+            *[f"  - {yaml_string(item)}" for item in article_categories],
             "featured: false",
             "draft: false",
             "---",
@@ -242,10 +258,41 @@ def write_article(page: dict, content: str, payload: dict) -> Path:
         ]
     )
 
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    output = OUTPUT_DIR / f"zy-{space_id}-{page_id}.md"
-    output.write_text("\n".join(lines), encoding="utf-8")
-    return output
+    object_key = f"blog/posts/{article_id}.md"
+    oss_bucket().put_object(
+        object_key,
+        "\n".join(lines).encode("utf-8"),
+        headers={
+            "Content-Type": "text/markdown; charset=utf-8",
+            "Cache-Control": "public, max-age=300",
+        },
+    )
+    source_url = public_oss_url(object_key)
+
+    posts = json.loads(MANIFEST_PATH.read_text(encoding="utf-8")) if MANIFEST_PATH.exists() else []
+    posts = [post for post in posts if post.get("id") != article_id]
+    posts.append(
+        {
+            "id": article_id,
+            "data": {
+                "title": title,
+                "description": description,
+                "date": published_at,
+                "image": str(cover) if cover else None,
+                "author": author,
+                "categories": article_categories,
+                "featured": False,
+            },
+            "sourceUrl": source_url,
+        }
+    )
+    posts.sort(key=lambda post: post.get("data", {}).get("date", ""), reverse=True)
+    MANIFEST_PATH.parent.mkdir(parents=True, exist_ok=True)
+    MANIFEST_PATH.write_text(
+        json.dumps(posts, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return source_url
 
 
 def main() -> int:
@@ -256,7 +303,7 @@ def main() -> int:
     )
     page, content = unwrap_page(body)
     output = write_article(page, content, payload)
-    print(f"Wrote {output.relative_to(ROOT)}")
+    print(f"Published {output} and updated {MANIFEST_PATH.relative_to(ROOT)}")
     return 0
 
 

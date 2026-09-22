@@ -1,0 +1,33 @@
+---
+import Base from "@/layouts/Base.astro";
+
+const token = (name: string) => `%%BLOG_${name}%%`;
+---
+
+<Base
+  title={token("TITLE")}
+  description={token("DESCRIPTION")}
+  image={token("IMAGE")}
+  canonical={token("CANONICAL")}
+>
+  <script is:inline type="application/ld+json" set:html={token("JSON_LD")} />
+  <section class="section blog-single" data-pagefind-body>
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10" set:html={token("IMAGE_HTML")} />
+        <div class="mt-10 max-w-[810px] lg:col-9">
+          <h1 class="h2" set:html={token("TITLE")} />
+          <div class="mb-5 mt-6 flex items-center space-x-2">
+            <ul class="mb-4">
+              <li class="mr-4 inline-block" set:html={token("AUTHOR")} />
+              <li class="mr-4 inline-block" set:html={token("DATE")} />
+              <li class="mr-4 inline-block" set:html={token("READING_TIME")} />
+              <li class="mr-4 inline-block" set:html={token("CATEGORIES")} />
+            </ul>
+          </div>
+          <div class="content" set:html={token("CONTENT")} />
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

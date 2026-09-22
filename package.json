@@ -7,7 +7,8 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && pagefind --site dist",
+    "build": "astro build && node scripts/build_edge_template.mjs && node scripts/build_search_index.mjs",
+    "test:edge": "node --test edge/blog.test.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "format": "prettier -w .",
@@ -28,6 +29,7 @@
     "date-fns": "^4.4.0",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
+    "js-yaml": "^4.2.0",
     "marked": "^18.0.5",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",

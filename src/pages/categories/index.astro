@@ -4,11 +4,10 @@ import PageHeader from "@/components/PageHeader.astro";
 import Shape from "@/components/Shape.astro";
 import BlogCategories from "@/components/blog/BlogCategories.astro";
 import Base from "@/layouts/Base.astro";
-import { getSinglePage } from "@/lib/contentParser.astro";
-import { getTaxonomy } from "@/lib/taxonomyParser.astro";
+import { getBlogCategories, getBlogPosts } from "@/lib/blogPosts";
 
-const posts = await getSinglePage("blog");
-const categories = await getTaxonomy("blog", "categories");
+const posts = await getBlogPosts();
+const categories = await getBlogCategories();
 ---
 
 <Base title={"文章分类"}>

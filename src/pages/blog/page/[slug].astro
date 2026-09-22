@@ -5,13 +5,12 @@ import Shape from "@/components/Shape.astro";
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
 import Pagination from "@/layouts/components/Pagination.astro";
-import { getSinglePage } from "@/lib/contentParser.astro";
-import { sortByDate } from "@/lib/utils/sortFunctions";
+import { getBlogPosts } from "@/lib/blogPosts";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
 
 export async function getStaticPaths() {
-  const posts = await getSinglePage("blog");
+  const posts = (await getBlogPosts()).filter((item) => !item.data.featured);
   const totalPages = Math.ceil(posts.length / config.settings.pagination);
   const paths = [];
 
@@ -27,9 +26,8 @@ export async function getStaticPaths() {
 const blogIndex = (await getEntry("blog", "-index")) as CollectionEntry<"blog">;
 
 const { slug } = Astro.params;
-const posts = await getSinglePage("blog");
-const sortedPosts = sortByDate(posts);
-const recentPost = sortedPosts.filter((item) => !item.data.featured);
+const posts = await getBlogPosts();
+const recentPost = posts.filter((item) => !item.data.featured);
 const totalPages = Math.ceil(recentPost.length / config.settings.pagination);
 const currentPage = slug && !isNaN(Number(slug)) ? Number(slug) : 1;
 const indexOfLastPost = currentPage * config.settings.pagination;
