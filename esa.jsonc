@@ -1,9 +1,9 @@
 {
   "name": "pinwheel-astro",
+  "entry": "./edge/blog.js",
   "installCommand": "pnpm install --frozen-lockfile",
   "buildCommand": "pnpm build",
   "assets": {
     "directory": "./dist",
-    "notFoundStrategy": "404Page"
-  }
+  },
 }

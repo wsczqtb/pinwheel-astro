@@ -8,18 +8,15 @@ import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
 import Pagination from "@/layouts/components/Pagination.astro";
 import Cta from "@/layouts/partials/Cta.astro";
-import { getSinglePage } from "@/lib/contentParser.astro";
-import { getTaxonomy } from "@/lib/taxonomyParser.astro";
-import { sortByDate } from "@/lib/utils/sortFunctions";
+import { getBlogCategories, getBlogPosts } from "@/lib/blogPosts";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
 
 const blogIndex = (await getEntry("blog", "-index")) as CollectionEntry<"blog">;
-const posts = await getSinglePage("blog");
-const categories = await getTaxonomy("blog", "categories");
-const sortedPosts = sortByDate(posts);
-const featuredPost = sortedPosts.filter((item) => item.data.featured);
-const recentPost = sortedPosts.filter((item) => !item.data.featured);
+const posts = await getBlogPosts();
+const categories = await getBlogCategories();
+const featuredPost = posts.filter((item) => item.data.featured);
+const recentPost = posts.filter((item) => !item.data.featured);
 const totalPages = Math.ceil(recentPost.length / config.settings.pagination);
 const currentPosts = recentPost.slice(0, config.settings.pagination);
 ---
@@ -39,7 +36,7 @@ const currentPosts = recentPost.slice(0, config.settings.pagination);
   <section class="section">
     <div class="container">
       <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet" />
-      <script src="/pagefind/pagefind-component-ui.js" type="module"></script>
+      <script is:inline src="/pagefind/pagefind-component-ui.js" type="module"></script>
       <div
         class="mb-12 rounded-lg border border-[#e5e7eb] bg-white p-5 md:p-7"
         style="--pagefind-ui-primary: #ff6b5b; --pagefind-ui-border-width: 1px; --pagefind-ui-border-radius: 6px;"

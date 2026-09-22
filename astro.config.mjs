@@ -55,7 +55,7 @@ export default defineConfig({
   /*fonts: fontsConfig,*/
   integrations: [
     react(),
-    sitemap(),
+    sitemap({ filter: (page) => !page.includes("/edge-article-template") }),
     AutoImport({
       imports: [
         "@/shortcodes/Button",

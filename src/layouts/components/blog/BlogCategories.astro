@@ -1,9 +1,8 @@
 ---
 import { humanize, slugify } from "@/lib/utils/textConverter";
-import type { CollectionEntry } from "astro:content";
 
 type Props = {
-  categories: CollectionEntry<"blog">["data"]["categories"];
+  categories: string[];
 };
 const { categories } = Astro.props;
 const params = Astro.params;

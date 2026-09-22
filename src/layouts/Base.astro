@@ -14,6 +14,11 @@ import {
 
 const { title, meta_title, description, image, noindex, canonical } =
   Astro.props;
+const pageUrl = canonical || new URL(Astro.url.pathname, config.site.base_url).href;
+const imageValue = image || config.metadata.meta_image;
+const socialImage = imageValue.startsWith("%%BLOG_")
+  ? imageValue
+  : new URL(imageValue, config.site.base_url).href;
 ---
 
 <!doctype html>
@@ -91,7 +96,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
-      content={`${config.site.base_url}/${Astro.url.pathname.replace("/", "")}`}
+      content={pageUrl}
     />
 
     <!-- twitter-title -->
@@ -113,17 +118,13 @@ const { title, meta_title, description, image, noindex, canonical } =
     <!-- og-image -->
     <meta
       property="og:image"
-      content={`${config.site.base_url}${
-        image ? image : config.metadata.meta_image
-      }`}
+      content={socialImage}
     />
 
     <!-- twitter-image -->
     <meta
       name="twitter:image"
-      content={`${config.site.base_url}${
-        image ? image : config.metadata.meta_image
-      }`}
+      content={socialImage}
     />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
