@@ -30,7 +30,7 @@ ZYPlayer 发布
 | Secret | 用途 |
 | --- | --- |
 | `ZYPLAYER_BASE_URL` | ZYPlayer 站点地址 |
-| `ZYPLAYER_RSA_PRIVATE_KEY` | API 签名私钥，可保存带 `\n` 的单行值；对应公钥配置在 ZYPlayer「开放接口 RSA 公钥」 |
+| `ZYPLAYER_RSA_PRIVATE_KEY` | ZYPlayer 弹窗显示的 Private Key；可直接粘贴裸 Base64，也可保存 PEM 格式 |
 | `ZYPLAYER_SPACE_ID` | 手动触发时使用的默认空间 ID |
 | `ZYPLAYER_ASSET_HOSTS` | 可选，允许转存图片的额外域名，逗号分隔 |
 | `OSS_ENDPOINT` | OSS Endpoint |
