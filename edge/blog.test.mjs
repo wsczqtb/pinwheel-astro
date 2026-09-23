@@ -108,3 +108,35 @@ test("routes ZYPlayer publish webhooks to GitHub", async () => {
     globalThis.fetch = originalFetch;
   }
 });
+
+test("accepts ZYPlayer publish payloads that use eventType", async () => {
+  const originalFetch = globalThis.fetch;
+  let dispatched = false;
+  globalThis.fetch = async () => {
+    dispatched = true;
+    return new Response(null, { status: 204 });
+  };
+  try {
+    const response = await worker.fetch(
+      new Request("https://example.com/hooks/zyplayer/webhook-secret", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          eventType: "document_publish",
+          pageId: "page-1",
+          spaceId: "space-1",
+        }),
+      }),
+      {},
+      {
+        WEBHOOK_TOKEN: "webhook-secret",
+        GITHUB_DISPATCH_TOKEN: "github-token",
+      },
+    );
+
+    assert.equal(response.status, 202);
+    assert.equal(dispatched, true);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
