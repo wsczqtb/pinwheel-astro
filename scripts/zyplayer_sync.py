@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import base64
 import hashlib
 import json
 import os
@@ -61,13 +62,30 @@ def event_payload() -> dict:
     return {**payload, "pageId": str(page_id), "spaceId": str(space_id)}
 
 
+def import_private_key(value: str) -> RSA.RsaKey:
+    """Accept PEM keys and the raw Base64 PKCS#8 value shown by ZYPlayer."""
+    normalized = value.replace("\\n", "\n").strip()
+    if "Private Key:" in normalized:
+        normalized = normalized.split("Private Key:", 1)[1].strip()
+    normalized = normalized.strip("` ")
+    try:
+        return RSA.import_key(normalized)
+    except (IndexError, ValueError, TypeError):
+        compact = re.sub(r"\s+", "", normalized)
+        try:
+            der = base64.b64decode(compact, validate=True)
+        except (ValueError, TypeError) as error:
+            raise ValueError("ZYPLAYER_RSA_PRIVATE_KEY is not a PEM or Base64 RSA private key") from error
+        return RSA.import_key(der)
+
+
 def signed_post(path: str, content: dict) -> dict:
     base_url = required("ZYPLAYER_BASE_URL").rstrip("/")
-    private_key = required("ZYPLAYER_RSA_PRIVATE_KEY").replace("\\n", "\n")
+    private_key = required("ZYPLAYER_RSA_PRIVATE_KEY")
 
     request_content = {**content, "salt": hashlib.sha256(os.urandom(32)).hexdigest()}
     content_json = json.dumps(request_content, ensure_ascii=False, separators=(",", ":"))
-    key = RSA.import_key(private_key)
+    key = import_private_key(private_key)
     signature = pkcs1_15.new(key).sign(SHA256.new(content_json.encode("utf-8"))).hex()
 
     response = requests.post(
