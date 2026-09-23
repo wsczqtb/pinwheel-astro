@@ -34,7 +34,9 @@ export async function handleWebhook(request, env) {
     return json({ error: "invalid_json" }, 400);
   }
 
-  if (payload.event !== "publish")
+  const event = payload.event ?? payload.eventType ?? payload.type ?? payload.action;
+  const publishEvents = new Set(["publish", "published", "page_publish", "document_publish"]);
+  if (event != null && !publishEvents.has(String(event).toLowerCase()))
     return json({ accepted: false, reason: "ignored_event" }, 202);
 
   const pageId = payload.pageId ?? payload.page_id;
