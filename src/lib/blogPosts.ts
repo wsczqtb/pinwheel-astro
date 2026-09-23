@@ -15,6 +15,13 @@ export type BlogPostSummary = {
   sourceUrl?: string;
 };
 
+const CATEGORY_ORDER = [
+  "industry-news",
+  "cross-border",
+  "amazon-operation",
+  "others",
+];
+
 export const getBlogPosts = async (): Promise<BlogPostSummary[]> => {
   const localPosts = await getCollection(
     "blog",
@@ -41,6 +48,17 @@ export const getBlogPosts = async (): Promise<BlogPostSummary[]> => {
   );
 };
 
-export const getBlogCategories = async () => [
-  ...new Set((await getBlogPosts()).flatMap((post) => post.data.categories)),
-];
+export const getBlogCategories = async () => {
+  const categories = [
+    ...new Set((await getBlogPosts()).flatMap((post) => post.data.categories)),
+  ];
+  const order = new Map(
+    CATEGORY_ORDER.map((category, index) => [category, index]),
+  );
+
+  return categories.sort((a, b) => {
+    const aIndex = order.get(a) ?? CATEGORY_ORDER.length;
+    const bIndex = order.get(b) ?? CATEGORY_ORDER.length;
+    return aIndex - bIndex || a.localeCompare(b);
+  });
+};
