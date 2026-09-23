@@ -65,6 +65,9 @@ def event_payload() -> dict:
 def import_private_key(value: str) -> RSA.RsaKey:
     """Accept PEM keys and the raw Base64 PKCS#8 value shown by ZYPlayer."""
     normalized = value.replace("\\n", "\n").strip()
+    if "Private Key:" in normalized:
+        normalized = normalized.split("Private Key:", 1)[1].strip()
+    normalized = normalized.strip("` ")
     try:
         return RSA.import_key(normalized)
     except (IndexError, ValueError, TypeError):
