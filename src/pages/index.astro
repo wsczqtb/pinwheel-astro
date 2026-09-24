@@ -4,8 +4,6 @@ import Banner from "@/layouts/components/Banner.astro";
 import KeyFeatures from "@/layouts/components/KeyFeatures.astro";
 import Service from "@/layouts/components/Service.astro";
 import Cta from "@/layouts/partials/Cta.astro";
-import Blog from "@/components/Blog.astro";
-import { getBlogPosts } from "@/lib/blogPosts";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
 
@@ -14,28 +12,11 @@ const homepage = (await getEntry(
   "-index"
 )) as CollectionEntry<"homepage">;
 const { banner, key_features, service } = homepage.data;
-const latestPosts = (await getBlogPosts()).slice(0, 6);
 ---
 
 <Base>
   <Banner banner={banner} />
   <KeyFeatures key_features={key_features} />
   <Service service={service} />
-  {
-    latestPosts.length > 0 && (
-      <section class="section bg-light">
-        <div class="container">
-          <div class="mb-10 flex items-end justify-between gap-6">
-            <div>
-              <h2>最新文章</h2>
-              <p class="mt-3">跨境电商实用指南与行业资讯</p>
-            </div>
-            <a class="btn btn-outline-primary" href="/blog">查看全部</a>
-          </div>
-          <Blog posts={latestPosts} />
-        </div>
-      </section>
-    )
-  }
   <Cta />
 </Base>
