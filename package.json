@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/build_edge_template.mjs && node scripts/build_search_index.mjs",
+    "build": "astro build && node scripts/build_edge_template.mjs && node scripts/build_search_index.mjs && node scripts/patch_pagefind_cjk.mjs",
     "test:edge": "node --test edge/blog.test.mjs",
     "preview": "astro preview",
     "check": "astro check",
