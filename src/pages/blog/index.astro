@@ -35,7 +35,12 @@ const currentPosts = recentPost.slice(0, config.settings.pagination);
   </section>
   <section class="section">
     <div class="container">
-      <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet" />
+      <link
+        href="/pagefind/pagefind-component-ui.css"
+        rel="stylesheet"
+        media="print"
+        onload="this.removeAttribute('media')"
+      />
       <script is:inline src="/pagefind/pagefind-component-ui.js" type="module"></script>
       <div
         class="mb-12 rounded-lg border border-[#e5e7eb] bg-white p-5 md:p-7"
